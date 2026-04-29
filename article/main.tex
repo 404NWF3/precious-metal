@@ -1,0 +1,228 @@
+% !TeX program = xelatex
+% 2026年全国大学生统计建模大赛论文 LaTeX 模板
+% 编译方式：XeLaTeX 编译 2 次；如使用参考文献数据库，可再配合 BibTeX/Biber。
+% 注意：除封面页、致谢部分外，不要在摘要、正文、页眉页脚等位置出现学校、参赛队员、指导教师等身份信息。
+
+\documentclass[UTF8,zihao=-4,fontset=fandol]{ctexart}
+
+% =====================
+% 页面与基础排版
+% =====================
+\usepackage[a4paper,top=2.54cm,bottom=2.54cm,left=3.17cm,right=3.17cm]{geometry}
+\usepackage{fontspec}
+\usepackage{xeCJK}
+\usepackage{amsmath,amssymb,bm}
+\usepackage{booktabs,array,tabularx,multirow}
+\usepackage{graphicx}
+\graphicspath{{asset/image/}}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{tocloft}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=black,
+  citecolor=black,
+  urlcolor=black,
+  pdfborder={0 0 0}
+}
+
+% =====================
+% 字体设置
+% =====================
+% 默认使用 TeX Live 自带的 fandol 中文字体，便于跨平台编译。
+% 若学校/赛事要求严格匹配“方正小标宋简体”，请先在本机安装该字体，
+% 然后取消下面两行注释，并按实际字体名调整 FZXiaoBiaoSong-Z05S。
+% \setCJKfamilyfont{xbs}{FZXiaoBiaoSong-Z05S}
+% \renewcommand{\xiaobiaosong}{\CJKfamily{xbs}}
+\newcommand{\xiaobiaosong}{\songti}
+
+% 西文字体保持 XeLaTeX 默认设置；如需 Times New Roman，可在本机已安装字体后加入：\setmainfont{Times New Roman}
+
+% 正文：宋体小四，固定 24 磅行距，段前段后 0 行，首行缩进 2 字符。
+\newcommand{\bodyformat}{\songti\zihao{-4}\setlength{\baselineskip}{24pt}\selectfont}
+\AtBeginDocument{\bodyformat}
+\setlength{\parindent}{2em}
+\setlength{\parskip}{0pt}
+
+% =====================
+% 标题层级
+% 层级序号：一、；（一）；1.；①
+% =====================
+\newcommand{\circlednum}[1]{%
+  \ifcase#1\or ①\or ②\or ③\or ④\or ⑤\or ⑥\or ⑦\or ⑧\or ⑨\or ⑩\else #1.\fi}
+\renewcommand{\thesection}{\chinese{section}、}
+\renewcommand{\thesubsection}{（\chinese{subsection}）}
+\renewcommand{\thesubsubsection}{\arabic{subsubsection}.}
+\renewcommand{\theparagraph}{\circlednum{\value{paragraph}}}
+
+\titleformat{\section}
+  {\heiti\zihao{-3}\bfseries\setlength{\baselineskip}{24pt}\selectfont}
+  {\thesection}{0pt}{}
+\titlespacing*{\section}{0pt}{0pt}{0pt}
+
+\titleformat{\subsection}
+  {\kaishu\zihao{4}\setlength{\baselineskip}{24pt}\selectfont}
+  {\thesubsection}{0pt}{}
+\titlespacing*{\subsection}{0pt}{0pt}{0pt}
+
+\titleformat{\subsubsection}
+  {\songti\zihao{-4}\bfseries\setlength{\baselineskip}{24pt}\selectfont}
+  {\thesubsubsection}{0pt}{}
+\titlespacing*{\subsubsection}{0pt}{0pt}{0pt}
+
+\titleformat{\paragraph}[block]
+  {\songti\zihao{-4}\setlength{\baselineskip}{24pt}\selectfont}
+  {\theparagraph}{0pt}{}
+\titlespacing*{\paragraph}{0pt}{0pt}{0pt}
+
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{3}
+
+% =====================
+% 图表、公式编号与标题
+% =====================
+\renewcommand{\thefigure}{\arabic{figure}}
+\renewcommand{\thetable}{\arabic{table}}
+\renewcommand{\theequation}{\arabic{equation}}
+\DeclareCaptionFont{songxiaosi}{\songti\zihao{-4}\setlength{\baselineskip}{24pt}\selectfont}
+\captionsetup{font=songxiaosi,labelfont=songxiaosi,labelsep=quad,justification=centering}
+\captionsetup[table]{position=top,name=表}
+\captionsetup[figure]{position=bottom,name=图}
+
+% 表格建议使用可编辑文字，不要直接贴截图。
+\newenvironment{normaltable}{%
+  \begin{center}\songti\zihao{5}\setlength{\baselineskip}{12pt}\selectfont\renewcommand{\arraystretch}{1.0}%
+}{\end{center}}
+
+% 目录、图表清单格式
+\renewcommand{\cftsecfont}{\songti\zihao{-4}}
+\renewcommand{\cftsubsecfont}{\songti\zihao{-4}}
+\renewcommand{\cftsubsubsecfont}{\songti\zihao{-4}}
+\renewcommand{\cftsecpagefont}{\songti\zihao{-4}}
+\renewcommand{\cftsubsecpagefont}{\songti\zihao{-4}}
+\renewcommand{\cftsubsubsecpagefont}{\songti\zihao{-4}}
+\renewcommand{\cftdotsep}{1}
+\renewcommand{\cfttabpresnum}{表}
+\renewcommand{\cftfigpresnum}{图}
+\setlength{\cfttabnumwidth}{3em}
+\setlength{\cftfignumwidth}{3em}
+
+% =====================
+% 参赛信息：只在封面页使用
+% =====================
+\newcommand{\workid}{TJJM20260000000}
+\newcommand{\schoolname}{XXXXXX大学}
+\newcommand{\papertitle}{贵金属期现市场收益率的多尺度分解与重构分析}
+\newcommand{\teammembers}{XXX\quad XXX\quad XXX}
+\newcommand{\advisorname}{XXX\quad XXX}
+\newcommand{\submitdate}{2026年XX月XX日}
+
+% =====================
+% 自定义页面结构
+% =====================
+\newcommand{\frontheading}[1]{%
+  \begin{center}
+    {\heiti\zihao{4}\setlength{\baselineskip}{24pt}\selectfont #1}
+  \end{center}
+}
+
+\newcommand{\makecover}{%
+  \begin{titlepage}
+    \thispagestyle{empty}
+    \begin{center}
+      {\heiti\zihao{3}\setlength{\baselineskip}{24pt}\selectfont 作品编号：\workid\par}
+      \vspace{2.2cm}
+      {\xiaobiaosong\zihao{1}\setlength{\baselineskip}{45pt}\selectfont 2026年（第十二届）全国大学生统计建模大赛\par}
+      {\xiaobiaosong\zihao{1}\setlength{\baselineskip}{45pt}\selectfont 参\quad 赛\quad 作\quad 品\par}
+      \vspace{2.4cm}
+      {\fangsong\zihao{-2}\setlength{\baselineskip}{30pt}\selectfont
+      \begin{tabular}{>{\raggedleft\arraybackslash}p{4cm}p{7.5cm}}
+        参赛学校： & \schoolname \\
+        \addlinespace[1.0em]
+        论文题目： & \papertitle \\
+        \addlinespace[1.0em]
+        参赛队员： & \teammembers \\
+        \addlinespace[1.0em]
+        指导老师： & \advisorname \\
+      \end{tabular}}
+    \end{center}
+  \end{titlepage}
+}
+
+\newcommand{\makeabstractpage}[2]{%
+  \clearpage
+  \thispagestyle{empty}
+  \begin{center}
+    {\xiaobiaosong\zihao{3}\setlength{\baselineskip}{24pt}\selectfont \papertitle}
+  \end{center}
+  \frontheading{摘要}
+  {\bodyformat #1\par}
+  \vspace{0.5em}
+  \noindent{\heiti\zihao{-4}关键词：}{\songti\zihao{-4}#2}
+}
+
+\makeatletter
+\newcommand{\makemaincontents}{%
+  \clearpage
+  \thispagestyle{empty}
+  \frontheading{目录}
+  \begingroup
+    \bodyformat
+    \@starttoc{toc}
+  \endgroup
+}
+
+\newcommand{\makefigtablelist}{%
+  \clearpage
+  \thispagestyle{empty}
+  \frontheading{表格与插图清单}
+  \begingroup
+    \bodyformat
+    \@starttoc{lot}
+    \vspace{1em}
+    \@starttoc{lof}
+  \endgroup
+}
+\makeatother
+
+\newcommand{\startmainmatter}{%
+  \clearpage
+  \pagenumbering{arabic}
+  \setcounter{page}{1}
+  \pagestyle{plain}
+  \begin{center}
+    {\xiaobiaosong\zihao{3}\setlength{\baselineskip}{24pt}\selectfont \papertitle}
+  \end{center}
+}
+
+\newenvironment{cnreferences}{%
+  \clearpage
+  \frontheading{参考文献}
+  \addcontentsline{toc}{section}{参考文献}
+  \begin{enumerate}[label={\textnormal{[\arabic*]}},leftmargin=2.8em,itemsep=0pt,topsep=0pt]
+}{\end{enumerate}}
+
+\newcommand{\appendixheading}{%
+  \clearpage
+  \frontheading{附录}
+  \addcontentsline{toc}{section}{附录}
+}
+
+\newcommand{\acknowledgementheading}{%
+  \clearpage
+  \frontheading{致谢}
+  \addcontentsline{toc}{section}{致谢}
+}
+
+% =====================
+% 正文开始
+% =====================
+
+\begin{document}
+\input{body}
+\end{document}

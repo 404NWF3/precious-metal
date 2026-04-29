@@ -62,14 +62,14 @@
     "palladium_spot": 10
   },
   "decomposition_seconds_by_series": {
-    "gold_futures": 8.1071,
-    "silver_futures": 8.2158,
-    "platinum_futures": 7.5998,
-    "palladium_futures": 7.5886,
-    "gold_spot": 7.9905,
-    "silver_spot": 7.8721,
-    "platinum_spot": 7.7234,
-    "palladium_spot": 8.0557
+    "gold_futures": 13.1749,
+    "silver_futures": 15.3835,
+    "platinum_futures": 9.9619,
+    "palladium_futures": 10.6224,
+    "gold_spot": 10.7636,
+    "silver_spot": 9.5048,
+    "platinum_spot": 9.2973,
+    "palladium_spot": 9.9416
   },
   "iceemdan_reconstruction_error_by_series": {
     "gold_futures": 6.938893903907228e-18,

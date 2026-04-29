@@ -1,0 +1,9 @@
+﻿series,asset,market,source_file,price_col,start_date,end_date,n_obs,duplicate_dates,weekend_rows_raw,missing_business_days,max_gap_days,missing_price
+gold_futures,gold,futures,Gold Futures Historical Data.csv,Price,2012-01-03,2026-03-31,3257,0,4,463,6,0
+silver_futures,silver,futures,Silver Futures Historical Data.csv,Price,2012-01-03,2026-03-31,3164,0,23,575,7,0
+platinum_futures,platinum,futures,Platinum Futures Historical Data.csv,Price,2012-01-02,2026-03-31,4161,0,465,21,4,0
+palladium_futures,palladium,futures,Palladium Futures Historical Data.csv,Price,2012-01-02,2026-03-31,3944,0,247,20,4,0
+gold_spot,gold,spot,xauusd_d.csv,Close,2012-01-03,2026-03-31,3675,0,0,41,4,0
+silver_spot,silver,spot,xagusd_d.csv,Close,2012-01-03,2026-03-31,3675,0,0,41,4,0
+platinum_spot,platinum,spot,xptusd_d.csv,Close,2012-01-03,2026-03-31,3675,0,0,41,4,0
+palladium_spot,palladium,spot,xpdusd_d.csv,Close,2012-01-03,2026-03-31,3675,0,0,41,4,0

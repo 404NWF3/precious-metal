@@ -1,0 +1,138 @@
+{
+  "method": "Direct ICEEMDAN implementation using PyEMD.EMD local-mean operator; PyEMD.CEEMDAN is not used.",
+  "parameters": {
+    "trials": 100,
+    "epsilon": 0.2,
+    "seed": 20260428,
+    "spline_kind": "cubic",
+    "max_imf": 12,
+    "gmm_components": 3,
+    "gmm_n_init": 50,
+    "gmm_reg_covar": 1e-06,
+    "reconstruction_tolerance": 1e-08
+  },
+  "input_checks": {
+    "input_file": "data\\processed\\precious_metals_daily_log_returns.csv",
+    "input_sha256": "7edc035e4616d8e9efff34acbe3ed7085e5dda8e4b91e095d4a34c92917cd15f",
+    "n_rows": 3100,
+    "n_series": 8,
+    "date_start": "2012-01-04",
+    "date_end": "2026-03-31",
+    "duplicate_dates": 0,
+    "missing_values": 0,
+    "year_counts": {
+      "2012": 251,
+      "2013": 252,
+      "2014": 252,
+      "2015": 252,
+      "2016": 252,
+      "2017": 197,
+      "2018": 198,
+      "2019": 198,
+      "2020": 201,
+      "2021": 200,
+      "2022": 199,
+      "2023": 198,
+      "2024": 198,
+      "2025": 198,
+      "2026": 54
+    },
+    "limitation_note": "Common trading days decline to about 198-201 observations per full year after 2017, so long-term component interpretation should be conservative."
+  },
+  "environment": {
+    "python": "3.11.15",
+    "platform": "Windows-10-10.0.22631-SP0",
+    "numpy": "2.4.4",
+    "pandas": "3.0.2"
+  },
+  "outputs": {
+    "iceemdan_imfs_long": "data/processed/02_iceemdan_gmm_rln/iceemdan_imfs_long.csv",
+    "iceemdan_diagnostics": "data/processed/02_iceemdan_gmm_rln/iceemdan_diagnostics.csv",
+    "gmm_rln_components_long": "data/processed/02_iceemdan_gmm_rln/gmm_rln_components_long.csv",
+    "gmm_rln_components_wide": "data/processed/02_iceemdan_gmm_rln/gmm_rln_components_wide.csv"
+  },
+  "n_imfs_by_series": {
+    "gold_futures": 10,
+    "silver_futures": 10,
+    "platinum_futures": 10,
+    "palladium_futures": 9,
+    "gold_spot": 10,
+    "silver_spot": 10,
+    "platinum_spot": 10,
+    "palladium_spot": 10
+  },
+  "decomposition_seconds_by_series": {
+    "gold_futures": 8.1071,
+    "silver_futures": 8.2158,
+    "platinum_futures": 7.5998,
+    "palladium_futures": 7.5886,
+    "gold_spot": 7.9905,
+    "silver_spot": 7.8721,
+    "platinum_spot": 7.7234,
+    "palladium_spot": 8.0557
+  },
+  "iceemdan_reconstruction_error_by_series": {
+    "gold_futures": 6.938893903907228e-18,
+    "silver_futures": 6.938893903907228e-18,
+    "platinum_futures": 3.469446951953614e-18,
+    "palladium_futures": 1.734723475976807e-18,
+    "gold_spot": 6.938893903907228e-18,
+    "silver_spot": 8.673617379884035e-19,
+    "platinum_spot": 3.469446951953614e-18,
+    "palladium_spot": 6.938893903907228e-18
+  },
+  "scale_reconstruction_error_by_series": {
+    "gold_futures": 1.7763568394002505e-15,
+    "silver_futures": 3.552713678800501e-15,
+    "platinum_futures": 2.6645352591003757e-15,
+    "palladium_futures": 5.329070518200751e-15,
+    "gold_spot": 3.552713678800501e-15,
+    "silver_spot": 7.105427357601002e-15,
+    "platinum_spot": 1.7763568394002505e-15,
+    "palladium_spot": 3.552713678800501e-15
+  },
+  "gmm_scale_counts_by_series": {
+    "gold_futures": {
+      "STC": 1,
+      "MTC": 1,
+      "LTC": 8
+    },
+    "silver_futures": {
+      "STC": 1,
+      "MTC": 1,
+      "LTC": 8
+    },
+    "platinum_futures": {
+      "STC": 1,
+      "MTC": 1,
+      "LTC": 8
+    },
+    "palladium_futures": {
+      "STC": 1,
+      "MTC": 1,
+      "LTC": 7
+    },
+    "gold_spot": {
+      "STC": 1,
+      "MTC": 1,
+      "LTC": 8
+    },
+    "silver_spot": {
+      "STC": 1,
+      "MTC": 1,
+      "LTC": 8
+    },
+    "platinum_spot": {
+      "STC": 1,
+      "MTC": 1,
+      "LTC": 8
+    },
+    "palladium_spot": {
+      "STC": 1,
+      "MTC": 1,
+      "LTC": 8
+    }
+  },
+  "mean_period_warnings": [],
+  "limitation_note": "Common trading days decline to about 198-201 observations per full year after 2017, so long-term component interpretation should be conservative."
+}

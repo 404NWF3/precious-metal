@@ -1,0 +1,9 @@
+﻿metric,value
+union_start,2012-01-02
+union_end,2026-03-31
+union_rows,4266
+complete_start,2012-01-03
+complete_end,2026-03-31
+complete_rows,3101
+complete_weekday_rows,3101
+complete_weekend_rows,0

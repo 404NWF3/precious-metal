@@ -1,7 +1,6 @@
 % !TeX program = xelatex
-% 2026年全国大学生统计建模大赛论文 LaTeX 模板
-% 编译方式：XeLaTeX 编译 2 次；如使用参考文献数据库，可再配合 BibTeX/Biber。
-% 注意：除封面页、致谢部分外，不要在摘要、正文、页眉页脚等位置出现学校、参赛队员、指导教师等身份信息。
+% 贵金属期现市场实证结果摘录
+% 编译方式：XeLaTeX 编译 2 次。
 
 \documentclass[UTF8,zihao=-4,fontset=fandol]{ctexart}
 
@@ -21,7 +20,6 @@
 \usepackage{titlesec}
 \usepackage{hyperref}
 \usepackage{xcolor}
-\usepackage{tocloft}
 
 \hypersetup{
   colorlinks=true,
@@ -99,130 +97,435 @@
   \begin{center}\songti\zihao{5}\setlength{\baselineskip}{12pt}\selectfont\renewcommand{\arraystretch}{1.0}%
 }{\end{center}}
 
-% 目录、图表清单格式
-\renewcommand{\cftsecfont}{\songti\zihao{-4}}
-\renewcommand{\cftsubsecfont}{\songti\zihao{-4}}
-\renewcommand{\cftsubsubsecfont}{\songti\zihao{-4}}
-\renewcommand{\cftsecpagefont}{\songti\zihao{-4}}
-\renewcommand{\cftsubsecpagefont}{\songti\zihao{-4}}
-\renewcommand{\cftsubsubsecpagefont}{\songti\zihao{-4}}
-\renewcommand{\cftdotsep}{1}
-\renewcommand{\cfttabpresnum}{表}
-\renewcommand{\cftfigpresnum}{图}
-\setlength{\cfttabnumwidth}{3em}
-\setlength{\cftfignumwidth}{3em}
-
-% =====================
-% 参赛信息：只在封面页使用
-% =====================
-\newcommand{\workid}{TJJM20260000000}
-\newcommand{\schoolname}{XXXXXX大学}
-\newcommand{\papertitle}{贵金属期现市场收益率的多尺度分解与重构分析}
-\newcommand{\teammembers}{XXX\quad XXX\quad XXX}
-\newcommand{\advisorname}{XXX\quad XXX}
-\newcommand{\submitdate}{2026年XX月XX日}
-
-% =====================
-% 自定义页面结构
-% =====================
-\newcommand{\frontheading}[1]{%
-  \begin{center}
-    {\heiti\zihao{4}\setlength{\baselineskip}{24pt}\selectfont #1}
-  \end{center}
-}
-
-\newcommand{\makecover}{%
-  \begin{titlepage}
-    \thispagestyle{empty}
-    \begin{center}
-      {\heiti\zihao{3}\setlength{\baselineskip}{24pt}\selectfont 作品编号：\workid\par}
-      \vspace{2.2cm}
-      {\xiaobiaosong\zihao{1}\setlength{\baselineskip}{45pt}\selectfont 2026年（第十二届）全国大学生统计建模大赛\par}
-      {\xiaobiaosong\zihao{1}\setlength{\baselineskip}{45pt}\selectfont 参\quad 赛\quad 作\quad 品\par}
-      \vspace{2.4cm}
-      {\fangsong\zihao{-2}\setlength{\baselineskip}{30pt}\selectfont
-      \begin{tabular}{>{\raggedleft\arraybackslash}p{4cm}p{7.5cm}}
-        参赛学校： & \schoolname \\
-        \addlinespace[1.0em]
-        论文题目： & \papertitle \\
-        \addlinespace[1.0em]
-        参赛队员： & \teammembers \\
-        \addlinespace[1.0em]
-        指导老师： & \advisorname \\
-      \end{tabular}}
-    \end{center}
-  \end{titlepage}
-}
-
-\newcommand{\makeabstractpage}[2]{%
-  \clearpage
-  \thispagestyle{empty}
-  \begin{center}
-    {\xiaobiaosong\zihao{3}\setlength{\baselineskip}{24pt}\selectfont \papertitle}
-  \end{center}
-  \frontheading{摘要}
-  {\bodyformat #1\par}
-  \vspace{0.5em}
-  \noindent{\heiti\zihao{-4}关键词：}{\songti\zihao{-4}#2}
-}
-
-\makeatletter
-\newcommand{\makemaincontents}{%
-  \clearpage
-  \thispagestyle{empty}
-  \frontheading{目录}
-  \begingroup
-    \bodyformat
-    \@starttoc{toc}
-  \endgroup
-}
-
-\newcommand{\makefigtablelist}{%
-  \clearpage
-  \thispagestyle{empty}
-  \frontheading{表格与插图清单}
-  \begingroup
-    \bodyformat
-    \@starttoc{lot}
-    \vspace{1em}
-    \@starttoc{lof}
-  \endgroup
-}
-\makeatother
-
-\newcommand{\startmainmatter}{%
-  \clearpage
-  \pagenumbering{arabic}
-  \setcounter{page}{1}
-  \pagestyle{plain}
-  \begin{center}
-    {\xiaobiaosong\zihao{3}\setlength{\baselineskip}{24pt}\selectfont \papertitle}
-  \end{center}
-}
-
-\newenvironment{cnreferences}{%
-  \clearpage
-  \frontheading{参考文献}
-  \addcontentsline{toc}{section}{参考文献}
-  \begin{enumerate}[label={\textnormal{[\arabic*]}},leftmargin=2.8em,itemsep=0pt,topsep=0pt]
-}{\end{enumerate}}
-
-\newcommand{\appendixheading}{%
-  \clearpage
-  \frontheading{附录}
-  \addcontentsline{toc}{section}{附录}
-}
-
-\newcommand{\acknowledgementheading}{%
-  \clearpage
-  \frontheading{致谢}
-  \addcontentsline{toc}{section}{致谢}
-}
-
 % =====================
 % 正文开始
 % =====================
 
 \begin{document}
-\input{body}
+
+\pagenumbering{arabic}
+\setcounter{page}{1}
+\setcounter{section}{3}
+
+\section{数据描述}
+\subsection{数据来源}
+本文选取黄金、白银、铂金和钯金四类贵金属作为研究对象。四类品种均具有活跃的期货交易和国际化现货报价，其中黄金和白银更受避险需求、美元流动性和通胀预期影响，铂金和钯金除金融属性外，还与汽车催化剂、工业制造等实际需求密切相关。因此，将四类贵金属纳入同一框架，有助于比较贵金属市场中金融属性与产业属性的差异。
+
+期货价格来自各贵金属历史期货价格文件，现货价格来自相应美元计价现货文件。由于不同市场的节假日和交易记录长度并不完全一致，本文保留八条价格序列同时存在的共同交易日。处理后价格面板覆盖2012年1月3日至2026年3月31日，共3101个共同交易日；收益率样本覆盖2012年1月4日至2026年3月31日，共3100个观测值。日对数收益率按
+\begin{equation}
+  r_{i,t}=100\left[\ln(P_{i,t})-\ln(P_{i,t-1})\right]
+\end{equation}
+计算，其中$P_{i,t}$为第$i$个贵金属期货或现货市场在交易日$t$的收盘价格。
+
+\subsection{统计描述}
+图\ref{fig:price}展示了四类贵金属期货与现货价格的演化。总体来看，同一品种的期货和现货价格走势高度一致，说明两个市场在长期价格方向上具有较强同步性。黄金价格在样本后段明显上行，体现其避险和金融属性；白银价格波动弹性更强；铂金和钯金价格则呈现更明显的阶段性变化，反映工业需求和供给扰动对其价格的影响。
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{fig_precious_metals_prices.png}
+  \caption{四类贵金属期货与现货价格走势}
+  \label{fig:price}
+\end{figure}
+
+图\ref{fig:return}给出了对应的日对数收益率。与价格序列相比，收益率围绕零上下波动，并呈现出显著的波动集聚特征，即大幅波动往往集中出现在相邻时期。白银、铂金和钯金的收益率振幅普遍大于黄金，说明黄金相对更稳健，而白银和铂族金属对市场冲击更敏感。
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{fig_precious_metals_returns.png}
+  \caption{四类贵金属期货与现货日对数收益率走势}
+  \label{fig:return}
+\end{figure}
+
+表\ref{tab:corr}报告了同一品种期货与现货收益率的相关系数。四类贵金属相关系数均高于0.85，其中铂金和钯金分别达到0.927和0.944，说明铂族金属期现市场在日度收益层面联动更紧密。黄金和白银相关系数略低，但仍表现出显著同步性。
+
+\begin{table}[H]
+\caption{贵金属期货与现货收益率相关系数}
+\label{tab:corr}
+\begin{normaltable}
+\begin{tabular}{cc}
+\toprule
+品种 & 期现收益率相关系数 \\
+\midrule
+黄金 & 0.854 \\
+白银 & 0.868 \\
+铂金 & 0.927 \\
+钯金 & 0.944 \\
+\bottomrule
+\end{tabular}
+\end{normaltable}
+\end{table}
+
+表\ref{tab:descriptive}进一步给出收益率描述统计。与参考文献的处理方式一致，本文将统计量按品种分组，并在每个品种下同时报告期货与现货收益率。所有序列均值接近零，符合日度金融收益率的一般特征；标准差方面，黄金最小，钯金和白银较大，表明后两者波动风险更强。各序列偏度均为负，说明样本期内负向极端冲击更突出；峰度均显著大于3，Jarque-Bera统计量在1\%水平上显著，表明收益率分布明显偏离正态分布并具有尖峰厚尾特征。ADF检验统计量同样在1\%水平上显著，说明收益率序列平稳，可以用于后续分解和重构分析。
+
+\begin{table}[H]
+\caption{贵金属期货与现货收益率描述统计}
+\label{tab:descriptive}
+\begin{normaltable}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lrrrrrrrr}
+\toprule
+ & \multicolumn{2}{c}{黄金} & \multicolumn{2}{c}{白银} & \multicolumn{2}{c}{铂金} & \multicolumn{2}{c}{钯金} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}\cmidrule(lr){6-7}\cmidrule(lr){8-9}
+统计量 & 期货 & 现货 & 期货 & 现货 & 期货 & 现货 & 期货 & 现货 \\
+\midrule
+Max & 5.893 & 5.954 & 16.877 & 15.227 & 11.112 & 10.239 & 18.627 & 19.665 \\
+Min & -12.088 & -10.392 & -37.646 & -32.895 & -21.035 & -20.281 & -22.917 & -21.994 \\
+Mean & 0.035 & 0.034 & 0.030 & 0.030 & 0.010 & 0.010 & 0.026 & 0.026 \\
+Std. Dev. & 1.128 & 1.085 & 2.222 & 2.093 & 1.848 & 1.737 & 2.446 & 2.306 \\
+Skew. & -0.755 & -0.600 & -1.739 & -1.943 & -0.663 & -0.800 & -0.687 & -0.768 \\
+Kurt. & 12.188 & 10.182 & 36.856 & 33.988 & 13.198 & 13.743 & 12.593 & 13.192 \\
+Jarque-Bera & 11158.9$^{***}$ & 6823.3$^{***}$ & 149119.4$^{***}$ & 125569.6$^{***}$ & 13611.5$^{***}$ & 15184.4$^{***}$ & 12085.9$^{***}$ & 13673.5$^{***}$ \\
+ADF & -57.18$^{***}$ & -40.70$^{***}$ & -14.56$^{***}$ & -40.56$^{***}$ & -24.53$^{***}$ & -14.44$^{***}$ & -25.08$^{***}$ & -23.22$^{***}$ \\
+\bottomrule
+\end{tabular}}
+\end{normaltable}
+\begin{flushleft}
+{\songti\zihao{5}注：收益率按$100\Delta\ln P$计算；Jarque-Bera检验用于检验正态性，ADF检验用于检验平稳性；$^{***}$表示在1\%水平上显著。}
+\end{flushleft}
+\end{table}
+
+\section{实证分析}
+\subsection{贵金属收益率序列分解}
+在上述统计检验基础上，本文对八条贵金属期货与现货收益率序列进行ICEEMDAN分解。图\ref{fig:imf}以黄金期货为例展示IMF时间曲线。可以看到，IMF1的振荡频率最高，主要捕捉日度噪声、突发消息和短期交易冲击；随着IMF阶数上升，分量波动逐渐平滑，平均周期逐步拉长，较高阶IMF与残差项更多反映低频调整和长期趋势。
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{fig_gold_futures_imfs.png}
+  \caption{黄金期货收益率的ICEEMDAN IMF时间曲线}
+  \label{fig:imf}
+\end{figure}
+
+为进一步刻画各分解模态，本文计算每个IMF及残差的平均周期、与原收益率序列的Spearman秩相关系数、方差贡献、运行长度数（RLN）以及GMM-RLN尺度分组，结果见表\ref{tab:imf-measures-gold-futures}至表\ref{tab:imf-measures-palladium-spot}。其中，平均周期用于度量IMF所对应的时间尺度，方差贡献用于衡量该模态对原收益率波动的重要性，RLN则作为后续短期、中期和长期成分聚类的依据。
+
+\newenvironment{imfmeasurecell}[2]{%
+  \begin{minipage}[t]{0.49\textwidth}
+  \vspace{0pt}
+  \captionsetup{skip=2pt}
+  \captionof{table}{#1}
+  \label{#2}
+  \centering
+  \renewcommand{\arraystretch}{0.85}
+}{%
+  \end{minipage}%
+}
+
+\begin{center}
+\begin{imfmeasurecell}{黄金期货收益率IMF及Residue}{tab:imf-measures-gold-futures}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lrrrrl}
+\toprule
+模态 & 平均周期 & 相关系数 & 重要性(\%) & RLN & 分组 \\
+\midrule
+IMF1 & 2.72 & 0.7383$^{***}$ & 58.04 & 2181 & STC \\
+IMF2 & 5.49 & 0.4254$^{***}$ & 20.85 & 1081 & MTC \\
+IMF3 & 11.03 & 0.2730$^{***}$ & 10.91 & 519 & LTC \\
+IMF4 & 21.53 & 0.2195$^{***}$ & 5.75 & 266 & LTC \\
+IMF5 & 41.33 & 0.1608$^{***}$ & 2.38 & 134 & LTC \\
+IMF6 & 88.57 & 0.0903$^{***}$ & 1.31 & 66 & LTC \\
+IMF7 & 206.67 & 0.0664$^{***}$ & 0.42 & 27 & LTC \\
+IMF8 & 442.86 & 0.0339$^{*}$ & 0.09 & 13 & LTC \\
+IMF9 & 775.00 & 0.0544$^{***}$ & 0.14 & 7 & LTC \\
+IMF10 & 3100.00 & 0.0187 & 0.03 & 4 & LTC \\
+Residue &  & 0.0661$^{***}$ & 0.07 &  & LTC \\
+\bottomrule
+\end{tabular}}
+\end{imfmeasurecell}
+\hfill
+\begin{imfmeasurecell}{黄金现货收益率IMF及Residue}{tab:imf-measures-gold-spot}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lrrrrl}
+\toprule
+模态 & 平均周期 & 相关系数 & 重要性(\%) & RLN & 分组 \\
+\midrule
+IMF1 & 2.73 & 0.7389$^{***}$ & 58.38 & 2173 & STC \\
+IMF2 & 5.39 & 0.4495$^{***}$ & 19.33 & 1078 & MTC \\
+IMF3 & 10.65 & 0.2939$^{***}$ & 10.67 & 543 & LTC \\
+IMF4 & 21.23 & 0.2247$^{***}$ & 6.69 & 273 & LTC \\
+IMF5 & 41.33 & 0.1431$^{***}$ & 2.24 & 135 & LTC \\
+IMF6 & 91.18 & 0.1168$^{***}$ & 1.57 & 66 & LTC \\
+IMF7 & 206.67 & 0.0714$^{***}$ & 0.61 & 25 & LTC \\
+IMF8 & 442.86 & 0.0250 & 0.10 & 14 & LTC \\
+IMF9 & 775.00 & 0.0595$^{***}$ & 0.34 & 7 & LTC \\
+IMF10 & 1550.00 & 0.0339$^{*}$ & 0.01 & 4 & LTC \\
+Residue &  & 0.0664$^{***}$ & 0.04 &  & LTC \\
+\bottomrule
+\end{tabular}}
+\end{imfmeasurecell}
+\par\vspace{1em}
+\begin{imfmeasurecell}{白银期货收益率IMF及Residue}{tab:imf-measures-silver-futures}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lrrrrl}
+\toprule
+模态 & 平均周期 & 相关系数 & 重要性(\%) & RLN & 分组 \\
+\midrule
+IMF1 & 2.73 & 0.7368$^{***}$ & 54.79 & 2160 & STC \\
+IMF2 & 5.39 & 0.4201$^{***}$ & 16.39 & 1084 & MTC \\
+IMF3 & 10.58 & 0.2861$^{***}$ & 9.63 & 558 & LTC \\
+IMF4 & 21.38 & 0.2008$^{***}$ & 10.93 & 271 & LTC \\
+IMF5 & 40.79 & 0.1320$^{***}$ & 6.15 & 144 & LTC \\
+IMF6 & 96.88 & 0.1000$^{***}$ & 1.40 & 61 & LTC \\
+IMF7 & 206.67 & 0.0604$^{***}$ & 0.48 & 28 & LTC \\
+IMF8 & 442.86 & 0.0179 & 0.14 & 13 & LTC \\
+IMF9 & 1033.33 & 0.0597$^{***}$ & 0.05 & 6 & LTC \\
+IMF10 & 1550.00 & 0.0162 & 0.01 & 4 & LTC \\
+Residue &  & 0.0464$^{***}$ & 0.02 &  & LTC \\
+\bottomrule
+\end{tabular}}
+\end{imfmeasurecell}
+\hfill
+\begin{imfmeasurecell}{白银现货收益率IMF及Residue}{tab:imf-measures-silver-spot}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lrrrrl}
+\toprule
+模态 & 平均周期 & 相关系数 & 重要性(\%) & RLN & 分组 \\
+\midrule
+IMF1 & 2.71 & 0.7309$^{***}$ & 53.69 & 2164 & STC \\
+IMF2 & 5.42 & 0.4436$^{***}$ & 16.82 & 1084 & MTC \\
+IMF3 & 10.69 & 0.2946$^{***}$ & 11.56 & 550 & LTC \\
+IMF4 & 21.53 & 0.2212$^{***}$ & 9.85 & 259 & LTC \\
+IMF5 & 43.66 & 0.1353$^{***}$ & 5.78 & 127 & LTC \\
+IMF6 & 88.57 & 0.0976$^{***}$ & 1.48 & 63 & LTC \\
+IMF7 & 206.67 & 0.0644$^{***}$ & 0.59 & 28 & LTC \\
+IMF8 & 442.86 & 0.0340$^{*}$ & 0.12 & 14 & LTC \\
+IMF9 & 775.00 & 0.0570$^{***}$ & 0.09 & 7 & LTC \\
+IMF10 & 1550.00 & 0.0195 & 0.01 & 4 & LTC \\
+Residue &  & 0.0506$^{***}$ & 0.00 &  & LTC \\
+\bottomrule
+\end{tabular}}
+\end{imfmeasurecell}
+\par\vspace{1em}
+\begin{imfmeasurecell}{铂金期货收益率IMF及Residue}{tab:imf-measures-platinum-futures}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lrrrrl}
+\toprule
+模态 & 平均周期 & 相关系数 & 重要性(\%) & RLN & 分组 \\
+\midrule
+IMF1 & 2.79 & 0.7462$^{***}$ & 61.03 & 2114 & STC \\
+IMF2 & 5.60 & 0.4744$^{***}$ & 19.03 & 1036 & MTC \\
+IMF3 & 10.99 & 0.3092$^{***}$ & 8.30 & 522 & LTC \\
+IMF4 & 22.46 & 0.2230$^{***}$ & 7.17 & 259 & LTC \\
+IMF5 & 48.44 & 0.1504$^{***}$ & 2.85 & 126 & LTC \\
+IMF6 & 93.94 & 0.0913$^{***}$ & 0.75 & 61 & LTC \\
+IMF7 & 221.43 & 0.0473$^{***}$ & 0.69 & 26 & LTC \\
+IMF8 & 442.86 & 0.0282 & 0.13 & 14 & LTC \\
+IMF9 & 775.00 & 0.0217 & 0.03 & 8 & LTC \\
+IMF10 & 1550.00 & -0.0161 & 0.00 & 5 & LTC \\
+Residue &  & 0.0339$^{*}$ & 0.01 &  & LTC \\
+\bottomrule
+\end{tabular}}
+\end{imfmeasurecell}
+\hfill
+\begin{imfmeasurecell}{铂金现货收益率IMF及Residue}{tab:imf-measures-platinum-spot}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lrrrrl}
+\toprule
+模态 & 平均周期 & 相关系数 & 重要性(\%) & RLN & 分组 \\
+\midrule
+IMF1 & 2.78 & 0.7498$^{***}$ & 61.05 & 2114 & STC \\
+IMF2 & 5.58 & 0.4826$^{***}$ & 18.74 & 1024 & MTC \\
+IMF3 & 10.99 & 0.3223$^{***}$ & 8.48 & 530 & LTC \\
+IMF4 & 22.30 & 0.2295$^{***}$ & 6.68 & 252 & LTC \\
+IMF5 & 49.21 & 0.1513$^{***}$ & 3.27 & 120 & LTC \\
+IMF6 & 103.33 & 0.0947$^{***}$ & 1.26 & 57 & LTC \\
+IMF7 & 238.46 & 0.0547$^{***}$ & 0.43 & 26 & LTC \\
+IMF8 & 442.86 & 0.0250 & 0.06 & 14 & LTC \\
+IMF9 & 775.00 & 0.0463$^{***}$ & 0.03 & 5 & LTC \\
+IMF10 & 1550.00 & 0.0108 & 0.00 & 4 & LTC \\
+Residue &  & 0.0354$^{**}$ & 0.00 &  & LTC \\
+\bottomrule
+\end{tabular}}
+\end{imfmeasurecell}
+\par\vspace{1em}
+\begin{imfmeasurecell}{钯金期货收益率IMF及Residue}{tab:imf-measures-palladium-futures}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lrrrrl}
+\toprule
+模态 & 平均周期 & 相关系数 & 重要性(\%) & RLN & 分组 \\
+\midrule
+IMF1 & 2.72 & 0.7310$^{***}$ & 55.90 & 2120 & STC \\
+IMF2 & 5.51 & 0.4584$^{***}$ & 24.34 & 1068 & MTC \\
+IMF3 & 10.54 & 0.3129$^{***}$ & 11.11 & 540 & LTC \\
+IMF4 & 21.38 & 0.2372$^{***}$ & 5.05 & 268 & LTC \\
+IMF5 & 46.97 & 0.1410$^{***}$ & 2.19 & 124 & LTC \\
+IMF6 & 106.90 & 0.0904$^{***}$ & 0.76 & 56 & LTC \\
+IMF7 & 238.46 & 0.0275 & 0.34 & 21 & LTC \\
+IMF8 & 620.00 & 0.0314$^{*}$ & 0.22 & 8 & LTC \\
+IMF9 & 1550.00 & 0.0638$^{***}$ & 0.10 & 5 & LTC \\
+Residue &  & 0.0186 & 0.00 &  & LTC \\
+\bottomrule
+\end{tabular}}
+\end{imfmeasurecell}
+\hfill
+\begin{imfmeasurecell}{钯金现货收益率IMF及Residue}{tab:imf-measures-palladium-spot}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lrrrrl}
+\toprule
+模态 & 平均周期 & 相关系数 & 重要性(\%) & RLN & 分组 \\
+\midrule
+IMF1 & 2.77 & 0.7265$^{***}$ & 54.28 & 2121 & STC \\
+IMF2 & 5.43 & 0.4614$^{***}$ & 21.76 & 1074 & MTC \\
+IMF3 & 10.54 & 0.3088$^{***}$ & 10.99 & 554 & LTC \\
+IMF4 & 21.38 & 0.2305$^{***}$ & 8.52 & 274 & LTC \\
+IMF5 & 44.29 & 0.1523$^{***}$ & 2.94 & 125 & LTC \\
+IMF6 & 96.88 & 0.0969$^{***}$ & 0.91 & 60 & LTC \\
+IMF7 & 258.33 & 0.0399$^{**}$ & 0.30 & 25 & LTC \\
+IMF8 & 442.86 & 0.0400$^{**}$ & 0.12 & 10 & LTC \\
+IMF9 & 1550.00 & 0.0660$^{***}$ & 0.17 & 5 & LTC \\
+IMF10 & 3100.00 & 0.0374$^{**}$ & 0.00 & 4 & LTC \\
+Residue &  & 0.0109 & 0.01 &  & LTC \\
+\bottomrule
+\end{tabular}}
+\end{imfmeasurecell}
+\end{center}
+
+\begin{flushleft}
+{\songti\zihao{5}注：重要性为各IMF或残差方差占总方差的比例；残差项并入长期成分重构，故分组列记为LTC但不计算RLN；STC、MTC和LTC分别表示短期、中期和长期成分；相关系数星号来自诊断文件中的Spearman双侧检验显著性列，$^{*}$、$^{**}$和$^{***}$分别表示在10\%、5\%和1\%水平上显著。}
+\end{flushleft}
+
+从全部序列看，除钯金期货分解得到9个IMF外，其余七条序列均得到10个IMF。各序列IMF平均周期均从约2.7个交易日开始，随后逐步扩展至1550或3100个交易日，说明ICEEMDAN在样本内形成了由高频到低频的有序分解。表\ref{tab:imf-measures-gold-futures}至表\ref{tab:imf-measures-palladium-spot}显示，各序列IMF1的相关系数和方差贡献均最大，其中黄金期货、黄金现货、铂金期货和铂金现货的IMF1方差贡献均在58\%以上；随着IMF阶数上升，相关系数和重要性整体下降，残差项的重要性接近于零。所有序列的IMF与残差重构误差均处于$10^{-18}$量级，表明分解在数值上能够精确还原原始收益率。
+
+\begin{table}[H]
+\caption{ICEEMDAN分解数量与重构误差}
+\label{tab:iceemdan-error}
+\begin{normaltable}
+\begin{tabular}{cccc}
+\toprule
+序列 & IMF数量 & IMF重构最大误差 & GMM-RLN重构最大误差 \\
+\midrule
+黄金期货 & 10 & $6.94\times10^{-18}$ & $1.78\times10^{-15}$ \\
+黄金现货 & 10 & $6.94\times10^{-18}$ & $3.55\times10^{-15}$ \\
+白银期货 & 10 & $6.94\times10^{-18}$ & $3.55\times10^{-15}$ \\
+白银现货 & 10 & $8.67\times10^{-19}$ & $7.11\times10^{-15}$ \\
+铂金期货 & 10 & $3.47\times10^{-18}$ & $2.66\times10^{-15}$ \\
+铂金现货 & 10 & $3.47\times10^{-18}$ & $1.78\times10^{-15}$ \\
+钯金期货 & 9 & $1.73\times10^{-18}$ & $5.33\times10^{-15}$ \\
+钯金现货 & 10 & $6.94\times10^{-18}$ & $3.55\times10^{-15}$ \\
+\bottomrule
+\end{tabular}
+\end{normaltable}
+\end{table}
+
+\subsection{贵金属收益率序列重构}
+在IMF分解基础上，本文使用GMM-RLN将IMF聚类为短期、中期和长期三类尺度。表\ref{tab:gmm-scale}显示，各序列通常由1个短期IMF、1个中期IMF和7--8个长期IMF构成。这一结果表明，高频与中频波动往往集中在最前两个IMF中，而低频波动由多个较平滑的IMF与残差共同刻画。
+
+\begin{table}[H]
+\caption{GMM-RLN多尺度分组及方差贡献}
+\label{tab:gmm-scale}
+\begin{normaltable}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{crrrrrr}
+\toprule
+序列 & STC数量 & STC方差占比(\%) & MTC数量 & MTC方差占比(\%) & LTC数量 & LTC方差占比(\%) \\
+\midrule
+黄金期货 & 1 & 58.0 & 1 & 20.9 & 8 & 21.0 \\
+黄金现货 & 1 & 58.4 & 1 & 19.3 & 8 & 22.2 \\
+白银期货 & 1 & 54.8 & 1 & 16.4 & 8 & 28.8 \\
+白银现货 & 1 & 53.7 & 1 & 16.8 & 8 & 29.5 \\
+铂金期货 & 1 & 61.0 & 1 & 19.0 & 8 & 19.9 \\
+铂金现货 & 1 & 61.1 & 1 & 18.7 & 8 & 20.2 \\
+钯金期货 & 1 & 55.9 & 1 & 24.3 & 7 & 19.8 \\
+钯金现货 & 1 & 54.3 & 1 & 21.8 & 8 & 24.0 \\
+\bottomrule
+\end{tabular}}
+\end{normaltable}
+\end{table}
+
+从方差贡献看，短期成分在所有序列中均占据最大比例，约为53.7\%--61.1\%。这说明贵金属日收益率波动主要受短期市场冲击驱动，尤其是铂金期货和铂金现货的短期方差占比超过61\%。中期成分方差占比约为16.4\%--24.3\%，其中钯金期货和钯金现货的中期贡献较高，提示钯金市场可能更容易受到阶段性产业供需调整影响。长期成分虽然由更多IMF构成，但方差占比相对有限，主要承担低频趋势和残差修正功能。
+
+图\ref{fig:reconstruction}以黄金期货为例展示原始收益率、IMF加总重构曲线、STC+MTC+LTC重构曲线及误差。两条重构曲线与原始序列几乎完全重合，误差曲线围绕零且量级极小，验证了ICEEMDAN分解和GMM-RLN重构的数值一致性。由此得到的短期、中期和长期重构序列可作为后续构建多尺度风险溢出网络的直接输入。
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{fig_gold_futures_reconstruction.png}
+  \caption{黄金期货收益率的多尺度重构曲线}
+  \label{fig:reconstruction}
+\end{figure}
+
+为与原论文对重构成分的统计检验保持一致，本文进一步对各贵金属期货与现货收益率的短期、中期和长期重构成分进行描述统计，结果见表\ref{tab:reconstructed-descriptive-stc}至表\ref{tab:reconstructed-descriptive-ltc}。
+
+\begin{table}[H]
+\caption{贵金属期货与现货收益率短期重构成分描述统计}
+\label{tab:reconstructed-descriptive-stc}
+\begin{normaltable}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lrrrrrrrr}
+\toprule
+ & \multicolumn{2}{c}{黄金} & \multicolumn{2}{c}{白银} & \multicolumn{2}{c}{铂金} & \multicolumn{2}{c}{钯金} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}\cmidrule(lr){6-7}\cmidrule(lr){8-9}
+统计量 & 期货 & 现货 & 期货 & 现货 & 期货 & 现货 & 期货 & 现货 \\
+\midrule
+Max & 5.476 & 5.929 & 16.098 & 17.259 & 9.893 & 10.530 & 12.125 & 7.677 \\
+Min & -5.660 & -6.322 & -17.474 & -15.099 & -10.460 & -10.991 & -11.510 & -7.624 \\
+Mean & 0.005 & 0.004 & 0.013 & 0.028 & 0.015 & 0.024 & 0.003 & 0.017 \\
+Std. Dev. & 0.862 & 0.810 & 1.724 & 1.576 & 1.408 & 1.318 & 1.790 & 1.666 \\
+Skew. & 0.023 & 0.022 & 0.373 & 0.473 & 0.109 & 0.109 & 0.058 & 0.013 \\
+Kurt. & 5.079 & 5.890 & 15.468 & 17.008 & 7.482 & 8.168 & 5.804 & 4.377 \\
+Jarque-Bera & 556.0$^{***}$ & 1074.4$^{***}$ & 20079.4$^{***}$ & 25372.2$^{***}$ & 2590.1$^{***}$ & 3442.1$^{***}$ & 1012.9$^{***}$ & 243.6$^{***}$ \\
+ADF & -29.13$^{***}$ & -40.79$^{***}$ & -14.48$^{***}$ & -20.26$^{***}$ & -48.38$^{***}$ & -14.14$^{***}$ & -25.17$^{***}$ & -24.93$^{***}$ \\
+\bottomrule
+\end{tabular}}
+\end{normaltable}
+\begin{flushleft}
+{\songti\zihao{5}注：该表报告短期重构成分（STC）的描述统计；Jarque-Bera检验用于检验正态性，ADF检验用于检验平稳性；$^{*}$、$^{**}$和$^{***}$分别表示在10\%、5\%和1\%水平上显著。}
+\end{flushleft}
+\end{table}
+
+\begin{table}[H]
+\caption{贵金属期货与现货收益率中期重构成分描述统计}
+\label{tab:reconstructed-descriptive-mtc}
+\begin{normaltable}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lrrrrrrrr}
+\toprule
+ & \multicolumn{2}{c}{黄金} & \multicolumn{2}{c}{白银} & \multicolumn{2}{c}{铂金} & \multicolumn{2}{c}{钯金} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}\cmidrule(lr){6-7}\cmidrule(lr){8-9}
+统计量 & 期货 & 现货 & 期货 & 现货 & 期货 & 现货 & 期货 & 现货 \\
+\midrule
+Max & 3.122 & 2.533 & 6.628 & 6.170 & 4.679 & 4.177 & 8.918 & 8.020 \\
+Min & -3.107 & -2.493 & -5.772 & -5.689 & -4.665 & -4.679 & -9.865 & -7.931 \\
+Mean & 0.003 & 0.004 & 0.004 & 0.006 & -0.001 & -0.007 & 0.007 & 0.021 \\
+Std. Dev. & 0.517 & 0.466 & 0.943 & 0.882 & 0.786 & 0.730 & 1.181 & 1.055 \\
+Skew. & -0.018 & 0.020 & 0.151 & -0.051 & -0.028 & -0.021 & 0.111 & 0.242 \\
+Kurt. & 7.319 & 5.920 & 8.158 & 9.623 & 6.982 & 7.105 & 12.975 & 9.706 \\
+Jarque-Bera & 2399.5$^{***}$ & 1096.8$^{***}$ & 3434.7$^{***}$ & 5645.8$^{***}$ & 2040.3$^{***}$ & 2167.9$^{***}$ & 12813.1$^{***}$ & 5817.2$^{***}$ \\
+ADF & -20.24$^{***}$ & -27.02$^{***}$ & -11.51$^{***}$ & -18.14$^{***}$ & -12.47$^{***}$ & -11.22$^{***}$ & -20.60$^{***}$ & -26.62$^{***}$ \\
+\bottomrule
+\end{tabular}}
+\end{normaltable}
+\begin{flushleft}
+{\songti\zihao{5}注：该表报告中期重构成分（MTC）的描述统计；Jarque-Bera检验用于检验正态性，ADF检验用于检验平稳性；$^{*}$、$^{**}$和$^{***}$分别表示在10\%、5\%和1\%水平上显著。}
+\end{flushleft}
+\end{table}
+
+\begin{table}[H]
+\caption{贵金属期货与现货收益率长期重构成分描述统计}
+\label{tab:reconstructed-descriptive-ltc}
+\begin{normaltable}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lrrrrrrrr}
+\toprule
+ & \multicolumn{2}{c}{黄金} & \multicolumn{2}{c}{白银} & \multicolumn{2}{c}{铂金} & \multicolumn{2}{c}{钯金} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}\cmidrule(lr){6-7}\cmidrule(lr){8-9}
+统计量 & 期货 & 现货 & 期货 & 现货 & 期货 & 现货 & 期货 & 现货 \\
+\midrule
+Max & 3.802 & 2.880 & 8.922 & 6.219 & 4.198 & 4.180 & 6.351 & 7.418 \\
+Min & -3.940 & -3.927 & -14.534 & -14.580 & -8.213 & -7.394 & -7.337 & -8.495 \\
+Mean & 0.026 & 0.026 & 0.013 & -0.005 & -0.004 & -0.007 & 0.016 & -0.011 \\
+Std. Dev. & 0.545 & 0.525 & 1.178 & 1.147 & 0.865 & 0.819 & 1.166 & 1.167 \\
+Skew. & -0.333 & -0.190 & -1.927 & -2.429 & -0.638 & -0.683 & -0.158 & -0.195 \\
+Kurt. & 8.679 & 6.999 & 28.829 & 32.398 & 12.355 & 11.842 & 7.155 & 8.608 \\
+Jarque-Bera & 4207.5$^{***}$ & 2075.5$^{***}$ & 87799.3$^{***}$ & 114303.1$^{***}$ & 11473.9$^{***}$ & 10303.4$^{***}$ & 2233.6$^{***}$ & 4065.6$^{***}$ \\
+ADF & -10.05$^{***}$ & -9.55$^{***}$ & -14.19$^{***}$ & -15.16$^{***}$ & -12.40$^{***}$ & -11.18$^{***}$ & -14.26$^{***}$ & -12.65$^{***}$ \\
+\bottomrule
+\end{tabular}}
+\end{normaltable}
+\begin{flushleft}
+{\songti\zihao{5}注：该表报告长期重构成分（LTC）的描述统计；Jarque-Bera检验用于检验正态性，ADF检验用于检验平稳性；$^{*}$、$^{**}$和$^{***}$分别表示在10\%、5\%和1\%水平上显著。}
+\end{flushleft}
+\end{table}
+
+从重构成分的标准差看，短期成分在八条序列中均具有最高波动，说明贵金属日度收益率的主要波动仍集中在高频冲击层面。中长期成分的波动整体低于短期成分，但白银和钯金的长期成分仍保留较明显的尾部波动特征。三张表中的Jarque-Bera统计量均在1\%水平上显著，表明各重构成分仍具有非正态分布特征；ADF统计量同样在1\%水平上显著，说明重构后的多尺度成分均满足平稳性要求。
+
+
+
 \end{document}

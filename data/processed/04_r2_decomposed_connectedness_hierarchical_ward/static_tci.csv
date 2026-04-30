@@ -1,0 +1,8 @@
+date,network_id,network_type,window_size,window_start,window_end,n_nodes,tci,TCI
+,same_scale_STC,same_scale_cross_metal,3100,2012-01-04,2026-03-31,8,0.7951036007380549,79.51036007380549
+,same_scale_MTC,same_scale_cross_metal,3100,2012-01-04,2026-03-31,8,0.6533427551675579,65.3342755167558
+,same_scale_LTC,same_scale_cross_metal,3100,2012-01-04,2026-03-31,8,0.7078750836740615,70.78750836740615
+,within_gold,within_metal_cross_scale,3100,2012-01-04,2026-03-31,6,0.5757671000961565,57.57671000961565
+,within_silver,within_metal_cross_scale,3100,2012-01-04,2026-03-31,6,0.49404759608877,49.404759608877
+,within_platinum,within_metal_cross_scale,3100,2012-01-04,2026-03-31,6,0.8468629002130964,84.68629002130965
+,within_palladium,within_metal_cross_scale,3100,2012-01-04,2026-03-31,6,0.7746725307098297,77.46725307098296

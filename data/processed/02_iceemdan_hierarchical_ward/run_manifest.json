@@ -1,0 +1,261 @@
+{
+  "method": "Direct ICEEMDAN implementation using PyEMD.EMD local-mean operator, followed by Ward hierarchical clustering reconstruction.",
+  "hierarchical_ward_note": "Ward linkage on standardized [log(mean_period), log(run_length_number / T)] IMF features; clusters are cut into three groups and mapped to STC/MTC/LTC by increasing cluster mean period. The residue is added to LTC.",
+  "parameters": {
+    "trials": 100,
+    "epsilon": 0.2,
+    "seed": 20260428,
+    "spline_kind": "cubic",
+    "max_imf": 12,
+    "hierarchical_clusters": 3,
+    "hierarchical_linkage": "ward",
+    "reconstruction_tolerance": 1e-08
+  },
+  "input_checks": {
+    "input_file": "data\\processed\\precious_metals_daily_log_returns.csv",
+    "input_sha256": "7edc035e4616d8e9efff34acbe3ed7085e5dda8e4b91e095d4a34c92917cd15f",
+    "n_rows": 3100,
+    "n_series": 8,
+    "date_start": "2012-01-04",
+    "date_end": "2026-03-31",
+    "duplicate_dates": 0,
+    "missing_values": 0,
+    "year_counts": {
+      "2012": 251,
+      "2013": 252,
+      "2014": 252,
+      "2015": 252,
+      "2016": 252,
+      "2017": 197,
+      "2018": 198,
+      "2019": 198,
+      "2020": 201,
+      "2021": 200,
+      "2022": 199,
+      "2023": 198,
+      "2024": 198,
+      "2025": 198,
+      "2026": 54
+    },
+    "limitation_note": "Common trading days decline to about 198-201 observations per full year after 2017, so long-term component interpretation should be conservative."
+  },
+  "environment": {
+    "python": "3.11.15",
+    "platform": "Windows-10-10.0.22631-SP0",
+    "numpy": "2.4.4",
+    "pandas": "3.0.2"
+  },
+  "outputs": {
+    "iceemdan_imfs_long": "data/processed/02_iceemdan_hierarchical_ward/iceemdan_imfs_long.csv",
+    "hierarchical_ward_diagnostics": "data/processed/02_iceemdan_hierarchical_ward/hierarchical_ward_diagnostics.csv",
+    "hierarchical_ward_components_long": "data/processed/02_iceemdan_hierarchical_ward/hierarchical_ward_components_long.csv",
+    "hierarchical_ward_components_wide": "data/processed/02_iceemdan_hierarchical_ward/hierarchical_ward_components_wide.csv",
+    "hierarchical_ward_reconstructed_component_descriptive_stats": "data/processed/02_iceemdan_hierarchical_ward/hierarchical_ward_reconstructed_component_descriptive_stats.csv",
+    "hierarchical_ward_reconstructed_component_descriptive_stats_latex": "data/processed/02_iceemdan_hierarchical_ward/hierarchical_ward_reconstructed_component_descriptive_stats.tex",
+    "hierarchical_ward_reconstruction_error_summary": "data/processed/02_iceemdan_hierarchical_ward/hierarchical_ward_reconstruction_error_summary.csv",
+    "hierarchical_ward_dendrograms": "data/processed/02_iceemdan_hierarchical_ward/visualizations/hierarchical_ward_dendrograms",
+    "imf_time_curves": "data/processed/02_iceemdan_hierarchical_ward/visualizations/imf_time_curves",
+    "hierarchical_ward_reconstruction_curves": "data/processed/02_iceemdan_hierarchical_ward/visualizations/hierarchical_ward_reconstruction_curves",
+    "hierarchical_ward_reconstruction_data": "data/processed/02_iceemdan_hierarchical_ward/visualizations/hierarchical_ward_reconstruction_data"
+  },
+  "spearman_significance_note": "spearman_pvalue is the two-sided p-value from scipy.stats.spearmanr; *, **, and *** indicate p < 0.10, p < 0.05, and p < 0.01.",
+  "n_imfs_by_series": {
+    "gold_futures": 10,
+    "silver_futures": 10,
+    "platinum_futures": 10,
+    "palladium_futures": 9,
+    "gold_spot": 10,
+    "silver_spot": 10,
+    "platinum_spot": 10,
+    "palladium_spot": 10
+  },
+  "decomposition_seconds_by_series": {
+    "gold_futures": 7.7678,
+    "silver_futures": 7.8445,
+    "platinum_futures": 7.3792,
+    "palladium_futures": 7.8559,
+    "gold_spot": 8.2408,
+    "silver_spot": 7.6777,
+    "platinum_spot": 7.4351,
+    "palladium_spot": 7.7796
+  },
+  "iceemdan_reconstruction_error_by_series": {
+    "gold_futures": 6.938893903907228e-18,
+    "silver_futures": 6.938893903907228e-18,
+    "platinum_futures": 3.469446951953614e-18,
+    "palladium_futures": 1.734723475976807e-18,
+    "gold_spot": 6.938893903907228e-18,
+    "silver_spot": 8.673617379884035e-19,
+    "platinum_spot": 3.469446951953614e-18,
+    "palladium_spot": 6.938893903907228e-18
+  },
+  "hierarchical_ward_reconstruction_error_by_series": {
+    "gold_futures": 1.7763568394002505e-15,
+    "silver_futures": 7.105427357601002e-15,
+    "platinum_futures": 3.552713678800501e-15,
+    "palladium_futures": 5.329070518200751e-15,
+    "gold_spot": 3.552713678800501e-15,
+    "silver_spot": 7.105427357601002e-15,
+    "platinum_spot": 3.552713678800501e-15,
+    "palladium_spot": 3.552713678800501e-15
+  },
+  "hierarchical_ward_scale_counts_by_series": {
+    "gold_futures": {
+      "STC": 2,
+      "MTC": 4,
+      "LTC": 4
+    },
+    "silver_futures": {
+      "STC": 5,
+      "MTC": 3,
+      "LTC": 2
+    },
+    "platinum_futures": {
+      "STC": 3,
+      "MTC": 3,
+      "LTC": 4
+    },
+    "palladium_futures": {
+      "STC": 3,
+      "MTC": 4,
+      "LTC": 2
+    },
+    "gold_spot": {
+      "STC": 3,
+      "MTC": 4,
+      "LTC": 3
+    },
+    "silver_spot": {
+      "STC": 3,
+      "MTC": 3,
+      "LTC": 4
+    },
+    "platinum_spot": {
+      "STC": 3,
+      "MTC": 3,
+      "LTC": 4
+    },
+    "palladium_spot": {
+      "STC": 3,
+      "MTC": 3,
+      "LTC": 4
+    }
+  },
+  "hierarchical_ward_dendrogram_paths": {
+    "gold_futures": {
+      "png": "data\\processed\\02_iceemdan_hierarchical_ward\\visualizations\\hierarchical_ward_dendrograms\\gold_futures_hierarchical_ward_dendrogram.png",
+      "pdf": "data\\processed\\02_iceemdan_hierarchical_ward\\visualizations\\hierarchical_ward_dendrograms\\gold_futures_hierarchical_ward_dendrogram.pdf"
+    },
+    "silver_futures": {
+      "png": "data\\processed\\02_iceemdan_hierarchical_ward\\visualizations\\hierarchical_ward_dendrograms\\silver_futures_hierarchical_ward_dendrogram.png",
+      "pdf": "data\\processed\\02_iceemdan_hierarchical_ward\\visualizations\\hierarchical_ward_dendrograms\\silver_futures_hierarchical_ward_dendrogram.pdf"
+    },
+    "platinum_futures": {
+      "png": "data\\processed\\02_iceemdan_hierarchical_ward\\visualizations\\hierarchical_ward_dendrograms\\platinum_futures_hierarchical_ward_dendrogram.png",
+      "pdf": "data\\processed\\02_iceemdan_hierarchical_ward\\visualizations\\hierarchical_ward_dendrograms\\platinum_futures_hierarchical_ward_dendrogram.pdf"
+    },
+    "palladium_futures": {
+      "png": "data\\processed\\02_iceemdan_hierarchical_ward\\visualizations\\hierarchical_ward_dendrograms\\palladium_futures_hierarchical_ward_dendrogram.png",
+      "pdf": "data\\processed\\02_iceemdan_hierarchical_ward\\visualizations\\hierarchical_ward_dendrograms\\palladium_futures_hierarchical_ward_dendrogram.pdf"
+    },
+    "gold_spot": {
+      "png": "data\\processed\\02_iceemdan_hierarchical_ward\\visualizations\\hierarchical_ward_dendrograms\\gold_spot_hierarchical_ward_dendrogram.png",
+      "pdf": "data\\processed\\02_iceemdan_hierarchical_ward\\visualizations\\hierarchical_ward_dendrograms\\gold_spot_hierarchical_ward_dendrogram.pdf"
+    },
+    "silver_spot": {
+      "png": "data\\processed\\02_iceemdan_hierarchical_ward\\visualizations\\hierarchical_ward_dendrograms\\silver_spot_hierarchical_ward_dendrogram.png",
+      "pdf": "data\\processed\\02_iceemdan_hierarchical_ward\\visualizations\\hierarchical_ward_dendrograms\\silver_spot_hierarchical_ward_dendrogram.pdf"
+    },
+    "platinum_spot": {
+      "png": "data\\processed\\02_iceemdan_hierarchical_ward\\visualizations\\hierarchical_ward_dendrograms\\platinum_spot_hierarchical_ward_dendrogram.png",
+      "pdf": "data\\processed\\02_iceemdan_hierarchical_ward\\visualizations\\hierarchical_ward_dendrograms\\platinum_spot_hierarchical_ward_dendrogram.pdf"
+    },
+    "palladium_spot": {
+      "png": "data\\processed\\02_iceemdan_hierarchical_ward\\visualizations\\hierarchical_ward_dendrograms\\palladium_spot_hierarchical_ward_dendrogram.png",
+      "pdf": "data\\processed\\02_iceemdan_hierarchical_ward\\visualizations\\hierarchical_ward_dendrograms\\palladium_spot_hierarchical_ward_dendrogram.pdf"
+    }
+  },
+  "limitation_note": "Common trading days decline to about 198-201 observations per full year after 2017, so long-term component interpretation should be conservative.",
+  "imf_time_curve_paths": {
+    "gold_futures": {
+      "png": "data\\processed\\02_iceemdan_hierarchical_ward\\visualizations\\imf_time_curves\\gold_futures_iceemdan_imf_time_curves.png",
+      "pdf": "data\\processed\\02_iceemdan_hierarchical_ward\\visualizations\\imf_time_curves\\gold_futures_iceemdan_imf_time_curves.pdf"
+    },
+    "silver_futures": {
+      "png": "data\\processed\\02_iceemdan_hierarchical_ward\\visualizations\\imf_time_curves\\silver_futures_iceemdan_imf_time_curves.png",
+      "pdf": "data\\processed\\02_iceemdan_hierarchical_ward\\visualizations\\imf_time_curves\\silver_futures_iceemdan_imf_time_curves.pdf"
+    },
+    "platinum_futures": {
+      "png": "data\\processed\\02_iceemdan_hierarchical_ward\\visualizations\\imf_time_curves\\platinum_futures_iceemdan_imf_time_curves.png",
+      "pdf": "data\\processed\\02_iceemdan_hierarchical_ward\\visualizations\\imf_time_curves\\platinum_futures_iceemdan_imf_time_curves.pdf"
+    },
+    "palladium_futures": {
+      "png": "data\\processed\\02_iceemdan_hierarchical_ward\\visualizations\\imf_time_curves\\palladium_futures_iceemdan_imf_time_curves.png",
+      "pdf": "data\\processed\\02_iceemdan_hierarchical_ward\\visualizations\\imf_time_curves\\palladium_futures_iceemdan_imf_time_curves.pdf"
+    },
+    "gold_spot": {
+      "png": "data\\processed\\02_iceemdan_hierarchical_ward\\visualizations\\imf_time_curves\\gold_spot_iceemdan_imf_time_curves.png",
+      "pdf": "data\\processed\\02_iceemdan_hierarchical_ward\\visualizations\\imf_time_curves\\gold_spot_iceemdan_imf_time_curves.pdf"
+    },
+    "silver_spot": {
+      "png": "data\\processed\\02_iceemdan_hierarchical_ward\\visualizations\\imf_time_curves\\silver_spot_iceemdan_imf_time_curves.png",
+      "pdf": "data\\processed\\02_iceemdan_hierarchical_ward\\visualizations\\imf_time_curves\\silver_spot_iceemdan_imf_time_curves.pdf"
+    },
+    "platinum_spot": {
+      "png": "data\\processed\\02_iceemdan_hierarchical_ward\\visualizations\\imf_time_curves\\platinum_spot_iceemdan_imf_time_curves.png",
+      "pdf": "data\\processed\\02_iceemdan_hierarchical_ward\\visualizations\\imf_time_curves\\platinum_spot_iceemdan_imf_time_curves.pdf"
+    },
+    "palladium_spot": {
+      "png": "data\\processed\\02_iceemdan_hierarchical_ward\\visualizations\\imf_time_curves\\palladium_spot_iceemdan_imf_time_curves.png",
+      "pdf": "data\\processed\\02_iceemdan_hierarchical_ward\\visualizations\\imf_time_curves\\palladium_spot_iceemdan_imf_time_curves.pdf"
+    }
+  },
+  "hierarchical_ward_reconstruction_data_paths": {
+    "gold_futures": "data\\processed\\02_iceemdan_hierarchical_ward\\visualizations\\hierarchical_ward_reconstruction_data\\gold_futures_hierarchical_ward_reconstruction.csv",
+    "silver_futures": "data\\processed\\02_iceemdan_hierarchical_ward\\visualizations\\hierarchical_ward_reconstruction_data\\silver_futures_hierarchical_ward_reconstruction.csv",
+    "platinum_futures": "data\\processed\\02_iceemdan_hierarchical_ward\\visualizations\\hierarchical_ward_reconstruction_data\\platinum_futures_hierarchical_ward_reconstruction.csv",
+    "palladium_futures": "data\\processed\\02_iceemdan_hierarchical_ward\\visualizations\\hierarchical_ward_reconstruction_data\\palladium_futures_hierarchical_ward_reconstruction.csv",
+    "gold_spot": "data\\processed\\02_iceemdan_hierarchical_ward\\visualizations\\hierarchical_ward_reconstruction_data\\gold_spot_hierarchical_ward_reconstruction.csv",
+    "silver_spot": "data\\processed\\02_iceemdan_hierarchical_ward\\visualizations\\hierarchical_ward_reconstruction_data\\silver_spot_hierarchical_ward_reconstruction.csv",
+    "platinum_spot": "data\\processed\\02_iceemdan_hierarchical_ward\\visualizations\\hierarchical_ward_reconstruction_data\\platinum_spot_hierarchical_ward_reconstruction.csv",
+    "palladium_spot": "data\\processed\\02_iceemdan_hierarchical_ward\\visualizations\\hierarchical_ward_reconstruction_data\\palladium_spot_hierarchical_ward_reconstruction.csv"
+  },
+  "hierarchical_ward_reconstruction_figure_paths": {
+    "gold_futures": {
+      "png": "data\\processed\\02_iceemdan_hierarchical_ward\\visualizations\\hierarchical_ward_reconstruction_curves\\gold_futures_hierarchical_ward_reconstruction.png",
+      "pdf": "data\\processed\\02_iceemdan_hierarchical_ward\\visualizations\\hierarchical_ward_reconstruction_curves\\gold_futures_hierarchical_ward_reconstruction.pdf"
+    },
+    "silver_futures": {
+      "png": "data\\processed\\02_iceemdan_hierarchical_ward\\visualizations\\hierarchical_ward_reconstruction_curves\\silver_futures_hierarchical_ward_reconstruction.png",
+      "pdf": "data\\processed\\02_iceemdan_hierarchical_ward\\visualizations\\hierarchical_ward_reconstruction_curves\\silver_futures_hierarchical_ward_reconstruction.pdf"
+    },
+    "platinum_futures": {
+      "png": "data\\processed\\02_iceemdan_hierarchical_ward\\visualizations\\hierarchical_ward_reconstruction_curves\\platinum_futures_hierarchical_ward_reconstruction.png",
+      "pdf": "data\\processed\\02_iceemdan_hierarchical_ward\\visualizations\\hierarchical_ward_reconstruction_curves\\platinum_futures_hierarchical_ward_reconstruction.pdf"
+    },
+    "palladium_futures": {
+      "png": "data\\processed\\02_iceemdan_hierarchical_ward\\visualizations\\hierarchical_ward_reconstruction_curves\\palladium_futures_hierarchical_ward_reconstruction.png",
+      "pdf": "data\\processed\\02_iceemdan_hierarchical_ward\\visualizations\\hierarchical_ward_reconstruction_curves\\palladium_futures_hierarchical_ward_reconstruction.pdf"
+    },
+    "gold_spot": {
+      "png": "data\\processed\\02_iceemdan_hierarchical_ward\\visualizations\\hierarchical_ward_reconstruction_curves\\gold_spot_hierarchical_ward_reconstruction.png",
+      "pdf": "data\\processed\\02_iceemdan_hierarchical_ward\\visualizations\\hierarchical_ward_reconstruction_curves\\gold_spot_hierarchical_ward_reconstruction.pdf"
+    },
+    "silver_spot": {
+      "png": "data\\processed\\02_iceemdan_hierarchical_ward\\visualizations\\hierarchical_ward_reconstruction_curves\\silver_spot_hierarchical_ward_reconstruction.png",
+      "pdf": "data\\processed\\02_iceemdan_hierarchical_ward\\visualizations\\hierarchical_ward_reconstruction_curves\\silver_spot_hierarchical_ward_reconstruction.pdf"
+    },
+    "platinum_spot": {
+      "png": "data\\processed\\02_iceemdan_hierarchical_ward\\visualizations\\hierarchical_ward_reconstruction_curves\\platinum_spot_hierarchical_ward_reconstruction.png",
+      "pdf": "data\\processed\\02_iceemdan_hierarchical_ward\\visualizations\\hierarchical_ward_reconstruction_curves\\platinum_spot_hierarchical_ward_reconstruction.pdf"
+    },
+    "palladium_spot": {
+      "png": "data\\processed\\02_iceemdan_hierarchical_ward\\visualizations\\hierarchical_ward_reconstruction_curves\\palladium_spot_hierarchical_ward_reconstruction.png",
+      "pdf": "data\\processed\\02_iceemdan_hierarchical_ward\\visualizations\\hierarchical_ward_reconstruction_curves\\palladium_spot_hierarchical_ward_reconstruction.pdf"
+    }
+  },
+  "hierarchical_ward_reconstruction_panel_paths": {
+    "png": "data\\processed\\02_iceemdan_hierarchical_ward\\visualizations\\hierarchical_ward_reconstruction_curves\\hierarchical_ward_original_vs_reconstructed_panel.png",
+    "pdf": "data\\processed\\02_iceemdan_hierarchical_ward\\visualizations\\hierarchical_ward_reconstruction_curves\\hierarchical_ward_original_vs_reconstructed_panel.pdf"
+  }
+}

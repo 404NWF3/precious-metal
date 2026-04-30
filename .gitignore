@@ -8,3 +8,5 @@ wheels/
 
 # Virtual environments
 .venv
+
+data/processed/04_r2_decomposed_connectedness_hierarchical_ward/dynamic_npdc_window252.csv

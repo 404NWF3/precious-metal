@@ -1,0 +1,202 @@
+{
+  "method": "R2 decomposed connectedness using PCA orthogonalization on Hierarchical Ward STC/MTC/LTC reconstructed components.",
+  "method_note": "R2G[target, source] stores the R2 contribution of source to target. FROM is row sum, TO is column sum, NET is TO minus FROM, and TCI is the mean row sum. Published indices use percent scale.",
+  "parameters": {
+    "method": "PCA orthogonalized R2 decomposition on standardized reconstructed return components",
+    "main_window_size": 252,
+    "robustness_window_sizes": [
+      200,
+      300
+    ],
+    "r2_tolerance": 1e-08,
+    "eigenvalue_tolerance": 1e-12,
+    "percent_scale": true,
+    "static_full_sample": true,
+    "dynamic_detail_window_sizes": [
+      252
+    ]
+  },
+  "input_checks": {
+    "input_file": "data\\processed\\02_iceemdan_hierarchical_ward\\hierarchical_ward_components_wide.csv",
+    "input_sha256": "6519950771bcc330efadda9ed6ae375cb7b9c455cf8443cd4af984234e460480",
+    "source_manifest_file": "data\\processed\\02_iceemdan_hierarchical_ward\\run_manifest.json",
+    "source_manifest_sha256": "a29ff9191f9ddbd9f6d53a9a5d189f0b563d5d32d5682390bb9e9adda4ebb1f1",
+    "n_rows": 3100,
+    "n_component_columns": 24,
+    "date_start": "2012-01-04",
+    "date_end": "2026-03-31",
+    "duplicate_dates": 0,
+    "missing_values": 0
+  },
+  "source_reconstruction_summary": {
+    "source_method": "Direct ICEEMDAN implementation using PyEMD.EMD local-mean operator, followed by Ward hierarchical clustering reconstruction.",
+    "source_parameters": {
+      "trials": 100,
+      "epsilon": 0.2,
+      "seed": 20260428,
+      "spline_kind": "cubic",
+      "max_imf": 12,
+      "hierarchical_clusters": 3,
+      "hierarchical_linkage": "ward",
+      "reconstruction_tolerance": 1e-08
+    },
+    "source_date_start": "2012-01-04",
+    "source_date_end": "2026-03-31"
+  },
+  "networks": [
+    {
+      "network_id": "same_scale_STC",
+      "network_type": "same_scale_cross_metal",
+      "scale": "STC",
+      "metal": null,
+      "node_columns": [
+        "gold_futures_STC",
+        "silver_futures_STC",
+        "platinum_futures_STC",
+        "palladium_futures_STC",
+        "gold_spot_STC",
+        "silver_spot_STC",
+        "platinum_spot_STC",
+        "palladium_spot_STC"
+      ]
+    },
+    {
+      "network_id": "same_scale_MTC",
+      "network_type": "same_scale_cross_metal",
+      "scale": "MTC",
+      "metal": null,
+      "node_columns": [
+        "gold_futures_MTC",
+        "silver_futures_MTC",
+        "platinum_futures_MTC",
+        "palladium_futures_MTC",
+        "gold_spot_MTC",
+        "silver_spot_MTC",
+        "platinum_spot_MTC",
+        "palladium_spot_MTC"
+      ]
+    },
+    {
+      "network_id": "same_scale_LTC",
+      "network_type": "same_scale_cross_metal",
+      "scale": "LTC",
+      "metal": null,
+      "node_columns": [
+        "gold_futures_LTC",
+        "silver_futures_LTC",
+        "platinum_futures_LTC",
+        "palladium_futures_LTC",
+        "gold_spot_LTC",
+        "silver_spot_LTC",
+        "platinum_spot_LTC",
+        "palladium_spot_LTC"
+      ]
+    },
+    {
+      "network_id": "within_gold",
+      "network_type": "within_metal_cross_scale",
+      "scale": null,
+      "metal": "gold",
+      "node_columns": [
+        "gold_futures_STC",
+        "gold_spot_STC",
+        "gold_futures_MTC",
+        "gold_spot_MTC",
+        "gold_futures_LTC",
+        "gold_spot_LTC"
+      ]
+    },
+    {
+      "network_id": "within_silver",
+      "network_type": "within_metal_cross_scale",
+      "scale": null,
+      "metal": "silver",
+      "node_columns": [
+        "silver_futures_STC",
+        "silver_spot_STC",
+        "silver_futures_MTC",
+        "silver_spot_MTC",
+        "silver_futures_LTC",
+        "silver_spot_LTC"
+      ]
+    },
+    {
+      "network_id": "within_platinum",
+      "network_type": "within_metal_cross_scale",
+      "scale": null,
+      "metal": "platinum",
+      "node_columns": [
+        "platinum_futures_STC",
+        "platinum_spot_STC",
+        "platinum_futures_MTC",
+        "platinum_spot_MTC",
+        "platinum_futures_LTC",
+        "platinum_spot_LTC"
+      ]
+    },
+    {
+      "network_id": "within_palladium",
+      "network_type": "within_metal_cross_scale",
+      "scale": null,
+      "metal": "palladium",
+      "node_columns": [
+        "palladium_futures_STC",
+        "palladium_spot_STC",
+        "palladium_futures_MTC",
+        "palladium_spot_MTC",
+        "palladium_futures_LTC",
+        "palladium_spot_LTC"
+      ]
+    }
+  ],
+  "validation": {
+    "max_r2_row_error": 4.440892098500626e-16,
+    "expected_rows": {
+      "dynamic_tci_window252": 19943,
+      "dynamic_tci_robustness_window200": 20307,
+      "dynamic_tci_robustness_window300": 19607
+    },
+    "actual_rows": {
+      "dynamic_tci_window252": 19943,
+      "dynamic_tci_robustness_window200": 20307,
+      "dynamic_tci_robustness_window300": 19607
+    },
+    "figure_counts": {
+      "static_heatmaps_png": 7,
+      "static_heatmaps_pdf": 7,
+      "static_net_png": 7,
+      "static_net_pdf": 7,
+      "static_network_png": 7,
+      "static_network_pdf": 7,
+      "dynamic_tci_png": 3,
+      "dynamic_tci_pdf": 3,
+      "dynamic_net_png": 7,
+      "dynamic_net_pdf": 7,
+      "robustness_tci_png": 7,
+      "robustness_tci_pdf": 7
+    }
+  },
+  "outputs": {
+    "network_node_metadata": "data/processed/04_r2_decomposed_connectedness_hierarchical_ward/network_node_metadata.csv",
+    "static_r2g_matrices_long": "data/processed/04_r2_decomposed_connectedness_hierarchical_ward/static_r2g_matrices_long.csv",
+    "static_directional_indices": "data/processed/04_r2_decomposed_connectedness_hierarchical_ward/static_directional_indices.csv",
+    "static_npdc": "data/processed/04_r2_decomposed_connectedness_hierarchical_ward/static_npdc.csv",
+    "static_tci": "data/processed/04_r2_decomposed_connectedness_hierarchical_ward/static_tci.csv",
+    "static_r2_decomposition_validation": "data/processed/04_r2_decomposed_connectedness_hierarchical_ward/static_r2_decomposition_validation.csv",
+    "dynamic_tci_window252": "data/processed/04_r2_decomposed_connectedness_hierarchical_ward/dynamic_tci_window252.csv",
+    "dynamic_directional_indices_window252": "data/processed/04_r2_decomposed_connectedness_hierarchical_ward/dynamic_directional_indices_window252.csv",
+    "dynamic_npdc_window252": "data/processed/04_r2_decomposed_connectedness_hierarchical_ward/dynamic_npdc_window252.csv",
+    "dynamic_r2_decomposition_validation_window252": "data/processed/04_r2_decomposed_connectedness_hierarchical_ward/dynamic_r2_decomposition_validation_window252.csv",
+    "dynamic_tci_robustness_windows_200_300": "data/processed/04_r2_decomposed_connectedness_hierarchical_ward/dynamic_tci_robustness_windows_200_300.csv",
+    "dynamic_r2_decomposition_validation_robustness_windows_200_300": "data/processed/04_r2_decomposed_connectedness_hierarchical_ward/dynamic_r2_decomposition_validation_robustness_windows_200_300.csv",
+    "visualizations": "data/processed/04_r2_decomposed_connectedness_hierarchical_ward/visualizations"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "platform": "Windows-10-10.0.22631-SP0",
+    "numpy": "2.4.4",
+    "pandas": "3.0.2",
+    "networkx": "3.6.1"
+  },
+  "runtime_seconds": 3014.2097157999997
+}

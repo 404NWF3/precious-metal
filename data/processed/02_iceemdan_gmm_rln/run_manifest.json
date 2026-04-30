@@ -57,10 +57,14 @@
     "hierarchical_ward_components_wide": "data/processed/02_iceemdan_gmm_rln/hierarchical_ward_components_wide.csv",
     "hierarchical_ward_dendrograms": "data/processed/02_iceemdan_gmm_rln/visualizations/hierarchical_ward_dendrograms",
     "gmm_rln_reconstructed_component_descriptive_stats": "data/processed/02_iceemdan_gmm_rln/gmm_rln_reconstructed_component_descriptive_stats.csv",
+<<<<<<< HEAD
     "gmm_rln_reconstructed_component_descriptive_stats_latex": "data/processed/02_iceemdan_gmm_rln/gmm_rln_reconstructed_component_descriptive_stats.tex",
     "hierarchical_ward_reconstruction_curves": "data/processed/02_iceemdan_gmm_rln/visualizations/hierarchical_ward_reconstruction_curves",
     "hierarchical_ward_reconstruction_data": "data/processed/02_iceemdan_gmm_rln/visualizations/hierarchical_ward_reconstruction_data",
     "hierarchical_ward_reconstruction_error_summary": "data/processed/02_iceemdan_gmm_rln/hierarchical_ward_reconstruction_error_summary.csv"
+=======
+    "gmm_rln_reconstructed_component_descriptive_stats_latex": "data/processed/02_iceemdan_gmm_rln/gmm_rln_reconstructed_component_descriptive_stats.tex"
+>>>>>>> 3ec6c339c7c407aeab9383dc0b83cf24847b4419
   },
   "spearman_significance_note": "spearman_pvalue is the two-sided p-value from scipy.stats.spearmanr; *, **, and *** indicate p < 0.10, p < 0.05, and p < 0.01.",
   "hierarchical_ward_note": "Ward linkage on standardized [log(mean_period), log(run_length_number / T)] IMF features; clusters are cut into three groups and mapped to STC/MTC/LTC by increasing cluster mean period.",

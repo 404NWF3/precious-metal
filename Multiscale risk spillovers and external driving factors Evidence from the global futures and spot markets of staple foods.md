@@ -222,7 +222,7 @@ Furthermore, the commonly used metrics, namely mean absolute error (MAE) and mea
 $$
 MAE=\frac{1}{Q}\sum\limits_{q=1}^{Q}\mid y_{q}-\hat{y}_{q}\mid,
 $$
- 
+
 $$
 MSE=\frac{1}{Q}\sum\limits_{q=1}^{Q}\left(y_{q}-\hat{y}_{q}\right)^{2}.
 $$

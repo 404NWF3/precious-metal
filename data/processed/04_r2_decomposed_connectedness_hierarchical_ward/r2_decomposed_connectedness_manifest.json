@@ -1,8 +1,8 @@
 {
-  "method": "R2 decomposed connectedness using PCA orthogonalization on Hierarchical Ward STC/MTC/LTC reconstructed components.",
-  "method_note": "R2G[target, source] stores the R2 contribution of source to target. FROM is row sum, TO is column sum, NET is TO minus FROM, and TCI is the mean row sum. Published indices use percent scale.",
+  "method": "PCA-orthogonalized R2 contribution / explanatory connectedness on Hierarchical Ward STC/MTC/LTC reconstructed components.",
+  "method_note": "This is the PCA-orthogonalized explanatory-connectedness notebook, not the strict paper-formula R2G implementation. Legacy r2g[target, source] columns store PCA-allocated contemporaneous R2 contribution shares of source to target. FROM is row sum, TO is column sum, NET is TO minus FROM, and TCI is the mean row sum. Published indices use percent scale and do not imply temporal causality.",
   "parameters": {
-    "method": "PCA orthogonalized R2 decomposition on standardized reconstructed return components",
+    "method": "PCA-orthogonalized R2 contribution / explanatory connectedness on standardized reconstructed return components",
     "main_window_size": 252,
     "robustness_window_sizes": [
       200,
@@ -198,5 +198,5 @@
     "pandas": "3.0.2",
     "networkx": "3.6.1"
   },
-  "runtime_seconds": 3014.2097157999997
+  "runtime_seconds": 92.9341072999996
 }

@@ -1,0 +1,159 @@
+{
+  "method": "Lagged strict R2G and Granger directionality checks on Hierarchical Ward STC/MTC/LTC reconstructed components.",
+  "method_note": "Pairwise Granger tests assess lagged predictive direction. Lagged R2G decomposes target components by lagged source components using the strict R2G formula; it should be interpreted as lagged explanatory direction, not structural shock transmission.",
+  "parameters": {
+    "method": "Pairwise Granger tests plus lagged strict R2G contribution decomposition",
+    "max_lag": 5,
+    "lag_selection": "BIC",
+    "fdr_method": "Benjamini-Hochberg",
+    "fdr_alpha": 0.05,
+    "r2_tolerance": 1e-08,
+    "eigenvalue_tolerance": 1e-12
+  },
+  "input_checks": {
+    "input_file": "data\\processed\\02_iceemdan_hierarchical_ward\\hierarchical_ward_components_wide.csv",
+    "input_sha256": "6519950771bcc330efadda9ed6ae375cb7b9c455cf8443cd4af984234e460480",
+    "n_rows": 3100,
+    "n_component_columns": 24,
+    "date_start": "2012-01-04",
+    "date_end": "2026-03-31"
+  },
+  "networks": [
+    {
+      "network_id": "same_scale_STC",
+      "network_type": "same_scale_cross_metal",
+      "scale": "STC",
+      "metal": null,
+      "node_columns": [
+        "gold_futures_STC",
+        "silver_futures_STC",
+        "platinum_futures_STC",
+        "palladium_futures_STC",
+        "gold_spot_STC",
+        "silver_spot_STC",
+        "platinum_spot_STC",
+        "palladium_spot_STC"
+      ]
+    },
+    {
+      "network_id": "same_scale_MTC",
+      "network_type": "same_scale_cross_metal",
+      "scale": "MTC",
+      "metal": null,
+      "node_columns": [
+        "gold_futures_MTC",
+        "silver_futures_MTC",
+        "platinum_futures_MTC",
+        "palladium_futures_MTC",
+        "gold_spot_MTC",
+        "silver_spot_MTC",
+        "platinum_spot_MTC",
+        "palladium_spot_MTC"
+      ]
+    },
+    {
+      "network_id": "same_scale_LTC",
+      "network_type": "same_scale_cross_metal",
+      "scale": "LTC",
+      "metal": null,
+      "node_columns": [
+        "gold_futures_LTC",
+        "silver_futures_LTC",
+        "platinum_futures_LTC",
+        "palladium_futures_LTC",
+        "gold_spot_LTC",
+        "silver_spot_LTC",
+        "platinum_spot_LTC",
+        "palladium_spot_LTC"
+      ]
+    },
+    {
+      "network_id": "within_gold",
+      "network_type": "within_metal_cross_scale",
+      "scale": null,
+      "metal": "gold",
+      "node_columns": [
+        "gold_futures_STC",
+        "gold_spot_STC",
+        "gold_futures_MTC",
+        "gold_spot_MTC",
+        "gold_futures_LTC",
+        "gold_spot_LTC"
+      ]
+    },
+    {
+      "network_id": "within_silver",
+      "network_type": "within_metal_cross_scale",
+      "scale": null,
+      "metal": "silver",
+      "node_columns": [
+        "silver_futures_STC",
+        "silver_spot_STC",
+        "silver_futures_MTC",
+        "silver_spot_MTC",
+        "silver_futures_LTC",
+        "silver_spot_LTC"
+      ]
+    },
+    {
+      "network_id": "within_platinum",
+      "network_type": "within_metal_cross_scale",
+      "scale": null,
+      "metal": "platinum",
+      "node_columns": [
+        "platinum_futures_STC",
+        "platinum_spot_STC",
+        "platinum_futures_MTC",
+        "platinum_spot_MTC",
+        "platinum_futures_LTC",
+        "platinum_spot_LTC"
+      ]
+    },
+    {
+      "network_id": "within_palladium",
+      "network_type": "within_metal_cross_scale",
+      "scale": null,
+      "metal": "palladium",
+      "node_columns": [
+        "palladium_futures_STC",
+        "palladium_spot_STC",
+        "palladium_futures_MTC",
+        "palladium_spot_MTC",
+        "palladium_futures_LTC",
+        "palladium_spot_LTC"
+      ]
+    }
+  ],
+  "validation": {
+    "max_lagged_r2g_row_error": 3.3306690738754696e-16,
+    "n_granger_tests": 288,
+    "n_granger_significant_fdr_5pct": 187,
+    "figure_counts": {
+      "granger_network_png": 7,
+      "lagged_heatmap_png": 7,
+      "lagged_network_png": 7
+    }
+  },
+  "outputs": {
+    "network_node_metadata": "data/processed/06_lagged_r2g_granger_directionality/network_node_metadata.csv",
+    "granger_pairwise_results": "data/processed/06_lagged_r2g_granger_directionality/granger_pairwise_results.csv",
+    "granger_significant_paths": "data/processed/06_lagged_r2g_granger_directionality/granger_significant_paths.csv",
+    "lag_selection_by_target": "data/processed/06_lagged_r2g_granger_directionality/lag_selection_by_target.csv",
+    "lagged_r2g_matrices_long": "data/processed/06_lagged_r2g_granger_directionality/lagged_r2g_matrices_long.csv",
+    "lagged_r2g_by_lag_long": "data/processed/06_lagged_r2g_granger_directionality/lagged_r2g_by_lag_long.csv",
+    "lagged_directional_indices": "data/processed/06_lagged_r2g_granger_directionality/lagged_directional_indices.csv",
+    "lagged_npdc": "data/processed/06_lagged_r2g_granger_directionality/lagged_npdc.csv",
+    "lagged_tci": "data/processed/06_lagged_r2g_granger_directionality/lagged_tci.csv",
+    "lagged_r2g_validation": "data/processed/06_lagged_r2g_granger_directionality/lagged_r2g_validation.csv",
+    "visualizations": "data/processed/06_lagged_r2g_granger_directionality/visualizations"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "platform": "Windows-10-10.0.22631-SP0",
+    "numpy": "2.4.4",
+    "pandas": "3.0.2",
+    "statsmodels": "0.14.6",
+    "networkx": "3.6.1"
+  },
+  "runtime_seconds": 20.282283300000017
+}

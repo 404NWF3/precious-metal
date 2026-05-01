@@ -1,49 +1,49 @@
 network_id,network_type,network_scale,network_metal,node_order,node_id,display_label,component_column,series,metal,market,scale
-same_scale_STC,same_scale_cross_metal,STC,,1,gold_futures_STC,Gold Futures,gold_futures_STC,gold_futures,gold,futures,STC
-same_scale_STC,same_scale_cross_metal,STC,,2,silver_futures_STC,Silver Futures,silver_futures_STC,silver_futures,silver,futures,STC
-same_scale_STC,same_scale_cross_metal,STC,,3,platinum_futures_STC,Platinum Futures,platinum_futures_STC,platinum_futures,platinum,futures,STC
-same_scale_STC,same_scale_cross_metal,STC,,4,palladium_futures_STC,Palladium Futures,palladium_futures_STC,palladium_futures,palladium,futures,STC
-same_scale_STC,same_scale_cross_metal,STC,,5,gold_spot_STC,Gold Spot,gold_spot_STC,gold_spot,gold,spot,STC
-same_scale_STC,same_scale_cross_metal,STC,,6,silver_spot_STC,Silver Spot,silver_spot_STC,silver_spot,silver,spot,STC
-same_scale_STC,same_scale_cross_metal,STC,,7,platinum_spot_STC,Platinum Spot,platinum_spot_STC,platinum_spot,platinum,spot,STC
-same_scale_STC,same_scale_cross_metal,STC,,8,palladium_spot_STC,Palladium Spot,palladium_spot_STC,palladium_spot,palladium,spot,STC
-same_scale_MTC,same_scale_cross_metal,MTC,,1,gold_futures_MTC,Gold Futures,gold_futures_MTC,gold_futures,gold,futures,MTC
-same_scale_MTC,same_scale_cross_metal,MTC,,2,silver_futures_MTC,Silver Futures,silver_futures_MTC,silver_futures,silver,futures,MTC
-same_scale_MTC,same_scale_cross_metal,MTC,,3,platinum_futures_MTC,Platinum Futures,platinum_futures_MTC,platinum_futures,platinum,futures,MTC
-same_scale_MTC,same_scale_cross_metal,MTC,,4,palladium_futures_MTC,Palladium Futures,palladium_futures_MTC,palladium_futures,palladium,futures,MTC
-same_scale_MTC,same_scale_cross_metal,MTC,,5,gold_spot_MTC,Gold Spot,gold_spot_MTC,gold_spot,gold,spot,MTC
-same_scale_MTC,same_scale_cross_metal,MTC,,6,silver_spot_MTC,Silver Spot,silver_spot_MTC,silver_spot,silver,spot,MTC
-same_scale_MTC,same_scale_cross_metal,MTC,,7,platinum_spot_MTC,Platinum Spot,platinum_spot_MTC,platinum_spot,platinum,spot,MTC
-same_scale_MTC,same_scale_cross_metal,MTC,,8,palladium_spot_MTC,Palladium Spot,palladium_spot_MTC,palladium_spot,palladium,spot,MTC
-same_scale_LTC,same_scale_cross_metal,LTC,,1,gold_futures_LTC,Gold Futures,gold_futures_LTC,gold_futures,gold,futures,LTC
-same_scale_LTC,same_scale_cross_metal,LTC,,2,silver_futures_LTC,Silver Futures,silver_futures_LTC,silver_futures,silver,futures,LTC
-same_scale_LTC,same_scale_cross_metal,LTC,,3,platinum_futures_LTC,Platinum Futures,platinum_futures_LTC,platinum_futures,platinum,futures,LTC
-same_scale_LTC,same_scale_cross_metal,LTC,,4,palladium_futures_LTC,Palladium Futures,palladium_futures_LTC,palladium_futures,palladium,futures,LTC
-same_scale_LTC,same_scale_cross_metal,LTC,,5,gold_spot_LTC,Gold Spot,gold_spot_LTC,gold_spot,gold,spot,LTC
-same_scale_LTC,same_scale_cross_metal,LTC,,6,silver_spot_LTC,Silver Spot,silver_spot_LTC,silver_spot,silver,spot,LTC
-same_scale_LTC,same_scale_cross_metal,LTC,,7,platinum_spot_LTC,Platinum Spot,platinum_spot_LTC,platinum_spot,platinum,spot,LTC
-same_scale_LTC,same_scale_cross_metal,LTC,,8,palladium_spot_LTC,Palladium Spot,palladium_spot_LTC,palladium_spot,palladium,spot,LTC
-within_gold,within_metal_cross_scale,,gold,1,gold_futures_STC,Futures STC,gold_futures_STC,gold_futures,gold,futures,STC
-within_gold,within_metal_cross_scale,,gold,2,gold_spot_STC,Spot STC,gold_spot_STC,gold_spot,gold,spot,STC
-within_gold,within_metal_cross_scale,,gold,3,gold_futures_MTC,Futures MTC,gold_futures_MTC,gold_futures,gold,futures,MTC
-within_gold,within_metal_cross_scale,,gold,4,gold_spot_MTC,Spot MTC,gold_spot_MTC,gold_spot,gold,spot,MTC
-within_gold,within_metal_cross_scale,,gold,5,gold_futures_LTC,Futures LTC,gold_futures_LTC,gold_futures,gold,futures,LTC
-within_gold,within_metal_cross_scale,,gold,6,gold_spot_LTC,Spot LTC,gold_spot_LTC,gold_spot,gold,spot,LTC
-within_silver,within_metal_cross_scale,,silver,1,silver_futures_STC,Futures STC,silver_futures_STC,silver_futures,silver,futures,STC
-within_silver,within_metal_cross_scale,,silver,2,silver_spot_STC,Spot STC,silver_spot_STC,silver_spot,silver,spot,STC
-within_silver,within_metal_cross_scale,,silver,3,silver_futures_MTC,Futures MTC,silver_futures_MTC,silver_futures,silver,futures,MTC
-within_silver,within_metal_cross_scale,,silver,4,silver_spot_MTC,Spot MTC,silver_spot_MTC,silver_spot,silver,spot,MTC
-within_silver,within_metal_cross_scale,,silver,5,silver_futures_LTC,Futures LTC,silver_futures_LTC,silver_futures,silver,futures,LTC
-within_silver,within_metal_cross_scale,,silver,6,silver_spot_LTC,Spot LTC,silver_spot_LTC,silver_spot,silver,spot,LTC
-within_platinum,within_metal_cross_scale,,platinum,1,platinum_futures_STC,Futures STC,platinum_futures_STC,platinum_futures,platinum,futures,STC
-within_platinum,within_metal_cross_scale,,platinum,2,platinum_spot_STC,Spot STC,platinum_spot_STC,platinum_spot,platinum,spot,STC
-within_platinum,within_metal_cross_scale,,platinum,3,platinum_futures_MTC,Futures MTC,platinum_futures_MTC,platinum_futures,platinum,futures,MTC
-within_platinum,within_metal_cross_scale,,platinum,4,platinum_spot_MTC,Spot MTC,platinum_spot_MTC,platinum_spot,platinum,spot,MTC
-within_platinum,within_metal_cross_scale,,platinum,5,platinum_futures_LTC,Futures LTC,platinum_futures_LTC,platinum_futures,platinum,futures,LTC
-within_platinum,within_metal_cross_scale,,platinum,6,platinum_spot_LTC,Spot LTC,platinum_spot_LTC,platinum_spot,platinum,spot,LTC
-within_palladium,within_metal_cross_scale,,palladium,1,palladium_futures_STC,Futures STC,palladium_futures_STC,palladium_futures,palladium,futures,STC
-within_palladium,within_metal_cross_scale,,palladium,2,palladium_spot_STC,Spot STC,palladium_spot_STC,palladium_spot,palladium,spot,STC
-within_palladium,within_metal_cross_scale,,palladium,3,palladium_futures_MTC,Futures MTC,palladium_futures_MTC,palladium_futures,palladium,futures,MTC
-within_palladium,within_metal_cross_scale,,palladium,4,palladium_spot_MTC,Spot MTC,palladium_spot_MTC,palladium_spot,palladium,spot,MTC
-within_palladium,within_metal_cross_scale,,palladium,5,palladium_futures_LTC,Futures LTC,palladium_futures_LTC,palladium_futures,palladium,futures,LTC
-within_palladium,within_metal_cross_scale,,palladium,6,palladium_spot_LTC,Spot LTC,palladium_spot_LTC,palladium_spot,palladium,spot,LTC
+same_scale_STC,same_scale_cross_metal,STC,,1,gold_futures_STC,AU_F,gold_futures_STC,gold_futures,gold,futures,STC
+same_scale_STC,same_scale_cross_metal,STC,,2,silver_futures_STC,AG_F,silver_futures_STC,silver_futures,silver,futures,STC
+same_scale_STC,same_scale_cross_metal,STC,,3,platinum_futures_STC,PT_F,platinum_futures_STC,platinum_futures,platinum,futures,STC
+same_scale_STC,same_scale_cross_metal,STC,,4,palladium_futures_STC,PD_F,palladium_futures_STC,palladium_futures,palladium,futures,STC
+same_scale_STC,same_scale_cross_metal,STC,,5,gold_spot_STC,AU_S,gold_spot_STC,gold_spot,gold,spot,STC
+same_scale_STC,same_scale_cross_metal,STC,,6,silver_spot_STC,AG_S,silver_spot_STC,silver_spot,silver,spot,STC
+same_scale_STC,same_scale_cross_metal,STC,,7,platinum_spot_STC,PT_S,platinum_spot_STC,platinum_spot,platinum,spot,STC
+same_scale_STC,same_scale_cross_metal,STC,,8,palladium_spot_STC,PD_S,palladium_spot_STC,palladium_spot,palladium,spot,STC
+same_scale_MTC,same_scale_cross_metal,MTC,,1,gold_futures_MTC,AU_F,gold_futures_MTC,gold_futures,gold,futures,MTC
+same_scale_MTC,same_scale_cross_metal,MTC,,2,silver_futures_MTC,AG_F,silver_futures_MTC,silver_futures,silver,futures,MTC
+same_scale_MTC,same_scale_cross_metal,MTC,,3,platinum_futures_MTC,PT_F,platinum_futures_MTC,platinum_futures,platinum,futures,MTC
+same_scale_MTC,same_scale_cross_metal,MTC,,4,palladium_futures_MTC,PD_F,palladium_futures_MTC,palladium_futures,palladium,futures,MTC
+same_scale_MTC,same_scale_cross_metal,MTC,,5,gold_spot_MTC,AU_S,gold_spot_MTC,gold_spot,gold,spot,MTC
+same_scale_MTC,same_scale_cross_metal,MTC,,6,silver_spot_MTC,AG_S,silver_spot_MTC,silver_spot,silver,spot,MTC
+same_scale_MTC,same_scale_cross_metal,MTC,,7,platinum_spot_MTC,PT_S,platinum_spot_MTC,platinum_spot,platinum,spot,MTC
+same_scale_MTC,same_scale_cross_metal,MTC,,8,palladium_spot_MTC,PD_S,palladium_spot_MTC,palladium_spot,palladium,spot,MTC
+same_scale_LTC,same_scale_cross_metal,LTC,,1,gold_futures_LTC,AU_F,gold_futures_LTC,gold_futures,gold,futures,LTC
+same_scale_LTC,same_scale_cross_metal,LTC,,2,silver_futures_LTC,AG_F,silver_futures_LTC,silver_futures,silver,futures,LTC
+same_scale_LTC,same_scale_cross_metal,LTC,,3,platinum_futures_LTC,PT_F,platinum_futures_LTC,platinum_futures,platinum,futures,LTC
+same_scale_LTC,same_scale_cross_metal,LTC,,4,palladium_futures_LTC,PD_F,palladium_futures_LTC,palladium_futures,palladium,futures,LTC
+same_scale_LTC,same_scale_cross_metal,LTC,,5,gold_spot_LTC,AU_S,gold_spot_LTC,gold_spot,gold,spot,LTC
+same_scale_LTC,same_scale_cross_metal,LTC,,6,silver_spot_LTC,AG_S,silver_spot_LTC,silver_spot,silver,spot,LTC
+same_scale_LTC,same_scale_cross_metal,LTC,,7,platinum_spot_LTC,PT_S,platinum_spot_LTC,platinum_spot,platinum,spot,LTC
+same_scale_LTC,same_scale_cross_metal,LTC,,8,palladium_spot_LTC,PD_S,palladium_spot_LTC,palladium_spot,palladium,spot,LTC
+within_gold,within_metal_cross_scale,,gold,1,gold_futures_STC,F_STC,gold_futures_STC,gold_futures,gold,futures,STC
+within_gold,within_metal_cross_scale,,gold,2,gold_spot_STC,S_STC,gold_spot_STC,gold_spot,gold,spot,STC
+within_gold,within_metal_cross_scale,,gold,3,gold_futures_MTC,F_MTC,gold_futures_MTC,gold_futures,gold,futures,MTC
+within_gold,within_metal_cross_scale,,gold,4,gold_spot_MTC,S_MTC,gold_spot_MTC,gold_spot,gold,spot,MTC
+within_gold,within_metal_cross_scale,,gold,5,gold_futures_LTC,F_LTC,gold_futures_LTC,gold_futures,gold,futures,LTC
+within_gold,within_metal_cross_scale,,gold,6,gold_spot_LTC,S_LTC,gold_spot_LTC,gold_spot,gold,spot,LTC
+within_silver,within_metal_cross_scale,,silver,1,silver_futures_STC,F_STC,silver_futures_STC,silver_futures,silver,futures,STC
+within_silver,within_metal_cross_scale,,silver,2,silver_spot_STC,S_STC,silver_spot_STC,silver_spot,silver,spot,STC
+within_silver,within_metal_cross_scale,,silver,3,silver_futures_MTC,F_MTC,silver_futures_MTC,silver_futures,silver,futures,MTC
+within_silver,within_metal_cross_scale,,silver,4,silver_spot_MTC,S_MTC,silver_spot_MTC,silver_spot,silver,spot,MTC
+within_silver,within_metal_cross_scale,,silver,5,silver_futures_LTC,F_LTC,silver_futures_LTC,silver_futures,silver,futures,LTC
+within_silver,within_metal_cross_scale,,silver,6,silver_spot_LTC,S_LTC,silver_spot_LTC,silver_spot,silver,spot,LTC
+within_platinum,within_metal_cross_scale,,platinum,1,platinum_futures_STC,F_STC,platinum_futures_STC,platinum_futures,platinum,futures,STC
+within_platinum,within_metal_cross_scale,,platinum,2,platinum_spot_STC,S_STC,platinum_spot_STC,platinum_spot,platinum,spot,STC
+within_platinum,within_metal_cross_scale,,platinum,3,platinum_futures_MTC,F_MTC,platinum_futures_MTC,platinum_futures,platinum,futures,MTC
+within_platinum,within_metal_cross_scale,,platinum,4,platinum_spot_MTC,S_MTC,platinum_spot_MTC,platinum_spot,platinum,spot,MTC
+within_platinum,within_metal_cross_scale,,platinum,5,platinum_futures_LTC,F_LTC,platinum_futures_LTC,platinum_futures,platinum,futures,LTC
+within_platinum,within_metal_cross_scale,,platinum,6,platinum_spot_LTC,S_LTC,platinum_spot_LTC,platinum_spot,platinum,spot,LTC
+within_palladium,within_metal_cross_scale,,palladium,1,palladium_futures_STC,F_STC,palladium_futures_STC,palladium_futures,palladium,futures,STC
+within_palladium,within_metal_cross_scale,,palladium,2,palladium_spot_STC,S_STC,palladium_spot_STC,palladium_spot,palladium,spot,STC
+within_palladium,within_metal_cross_scale,,palladium,3,palladium_futures_MTC,F_MTC,palladium_futures_MTC,palladium_futures,palladium,futures,MTC
+within_palladium,within_metal_cross_scale,,palladium,4,palladium_spot_MTC,S_MTC,palladium_spot_MTC,palladium_spot,palladium,spot,MTC
+within_palladium,within_metal_cross_scale,,palladium,5,palladium_futures_LTC,F_LTC,palladium_futures_LTC,palladium_futures,palladium,futures,LTC
+within_palladium,within_metal_cross_scale,,palladium,6,palladium_spot_LTC,S_LTC,palladium_spot_LTC,palladium_spot,palladium,spot,LTC

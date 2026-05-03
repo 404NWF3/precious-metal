@@ -1,0 +1,50 @@
+{
+  "method_note": "External driver analysis for R2G dynamic TCI. Main driver targets are level, delta20, fold-wise AR residuals, and high-connectedness states. Same-scale LTC under the 252-day rolling window is diagnosed separately and excluded from main driver targets.",
+  "main_targets": [
+    "tci_same_scale_STC",
+    "tci_same_scale_MTC",
+    "tci_within_gold",
+    "tci_within_silver",
+    "tci_within_platinum",
+    "tci_within_palladium"
+  ],
+  "excluded_from_main_driver_model": [
+    "tci_same_scale_LTC"
+  ],
+  "target_types": [
+    "level",
+    "delta20",
+    "ar_residual",
+    "high_q75",
+    "high_q90"
+  ],
+  "selected_raw_feature_count": 59,
+  "engineered_external_feature_count": 295,
+  "date_range_model_dataset": [
+    "2013-03-04",
+    "2026-03-31"
+  ],
+  "dropped_low_coverage_features": [
+    "credit_spread_hy",
+    "credit_spread_ig"
+  ],
+  "cftc_precious_rows": 4152,
+  "outputs": {
+    "target_variants_dataset": "data\\processed\\08_tci_external_driver_factor_analysis\\target_variants_dataset.csv",
+    "regression_model_performance_by_target_type": "data\\processed\\08_tci_external_driver_factor_analysis\\regression_model_performance_by_target_type.csv",
+    "regression_incremental_vs_ar": "data\\processed\\08_tci_external_driver_factor_analysis\\regression_incremental_vs_ar.csv",
+    "residual_driver_performance": "data\\processed\\08_tci_external_driver_factor_analysis\\residual_driver_performance.csv",
+    "classification_model_performance": "data\\processed\\08_tci_external_driver_factor_analysis\\classification_model_performance.csv",
+    "classification_thresholds_by_fold": "data\\processed\\08_tci_external_driver_factor_analysis\\classification_thresholds_by_fold.csv",
+    "driver_importance_regression_long": "data\\processed\\08_tci_external_driver_factor_analysis\\driver_importance_regression_long.csv",
+    "driver_importance_classification_long": "data\\processed\\08_tci_external_driver_factor_analysis\\driver_importance_classification_long.csv",
+    "driver_group_importance_summary": "data\\processed\\08_tci_external_driver_factor_analysis\\driver_group_importance_summary.csv",
+    "ltc_window_sensitivity": "data\\processed\\08_tci_external_driver_factor_analysis\\ltc_window_sensitivity.csv",
+    "regression_incremental_r2_heatmap": "data\\processed\\08_tci_external_driver_factor_analysis\\visualizations\\regression_incremental_r2_heatmap.png",
+    "delta20_driver_group_heatmap": "data\\processed\\08_tci_external_driver_factor_analysis\\visualizations\\delta20_driver_group_heatmap.png",
+    "ar_residual_driver_group_heatmap": "data\\processed\\08_tci_external_driver_factor_analysis\\visualizations\\ar_residual_driver_group_heatmap.png",
+    "high_state_auc_heatmap": "data\\processed\\08_tci_external_driver_factor_analysis\\visualizations\\high_state_auc_heatmap.png",
+    "high_state_driver_group_heatmap": "data\\processed\\08_tci_external_driver_factor_analysis\\visualizations\\high_state_driver_group_heatmap.png",
+    "ltc_window_sensitivity_plot": "data\\processed\\08_tci_external_driver_factor_analysis\\visualizations\\ltc_window_sensitivity.png"
+  }
+}

@@ -1,0 +1,25 @@
+﻿variable,status,downloaded_or_constructed,reason_or_note,source_url
+dollar_index,included_raw,yes,Downloaded earlier in project; packaged here as CSV.,https://fred.stlouisfed.org/series/DTWEXBGS
+yield_10y,included_raw,yes,Downloaded earlier in project; packaged here as CSV.,https://fred.stlouisfed.org/series/DGS10
+breakeven_10y,included_raw,yes,Downloaded earlier in project; packaged here as CSV.,https://fred.stlouisfed.org/series/T10YIE
+real_rate_10y_approx,constructed,yes,Exact TIPS series DFII10 can be downloaded separately; this package constructs an approximation from nominal 10Y yield minus breakeven inflation.,https://fred.stlouisfed.org/series/DFII10
+vix_close,included_raw,yes,Downloaded earlier in project; packaged here as CSV.,https://fred.stlouisfed.org/series/VIXCLS
+wti_price_usd,included_raw,yes,Downloaded earlier in project; packaged here as CSV.,https://fred.stlouisfed.org/series/DCOILWTICO
+gpr,included_raw_from_xlsx,yes,Parsed from official XLSX already available in project.,https://www.matteoiacoviello.com/gpr.htm
+gold_silver_ratio_*,constructed,yes,Constructed from futures and spot prices.,internal price panel
+platinum_palladium_ratio_*,constructed,yes,Constructed from futures and spot prices.,internal price panel
+gold_platinum_ratio_*,constructed,yes,Constructed from futures and spot prices.,internal price panel
+MOVE,source_located_not_included,no,Official data is ICE product; use licensed source or public finance portal if permitted.,https://developer.ice.com/fixed-income-data-services/catalog/ice-data-indices-move-index
+credit_spread_ig,source_located_not_included,no,FRED source located; not downloaded in current environment.,https://fred.stlouisfed.org/series/BAMLC0A0CM
+credit_spread_hy,source_located_not_included,no,FRED source located; not downloaded in current environment.,https://fred.stlouisfed.org/series/BAMLH0A0HYM2
+financial_stress,source_located_not_included,no,FRED source located; not downloaded in current environment.,https://fred.stlouisfed.org/series/STLFSI4
+gold_etf_holdings_flows,source_located_not_included,no,Download URL located but direct file access may require browser permissions.,https://www.gold.org/goldhub/data/gold-etfs-holdings-and-flows
+central_bank_gold_reserves_changes,source_located_not_included,no,Download URL located but direct file access may require browser permissions.,https://www.gold.org/goldhub/data/gold-reserves-by-country
+CFTC_COT_disaggregated_positions,source_located_not_included,no,API source located; historical query to be run outside the current network-restricted environment.,https://publicreporting.cftc.gov/Commitments-of-Traders/Disaggregated-Futures-Only/72hh-3qpy
+COMEX_volume_open_interest,source_located_not_included,no,CME data access may require product page/manual export; CFTC OI available weekly.,https://www.cmegroup.com/market-data/volume-open-interest.html
+industrial_production,source_located_not_included,no,FRED source located; not downloaded in current environment.,https://fred.stlouisfed.org/series/INDPRO
+PMI,source_located_not_included,no,Full global PMI history often requires subscription; ISM US series more accessible.,https://www.ismworld.org/supply-management-news-and-reports/reports/ism-pmi-reports/
+auto_production,source_located_not_included,no,OICA source located; manual download likely needed.,https://oica.net/production-statistics/
+platinum_supply_demand,source_located_not_included,no,Download link located; binary file not fetched in current environment.,https://platinuminvestment.com/supply-and-demand/historic-data
+palladium_supply_demand,source_located_not_included,no,Download link located; binary file not fetched in current environment.,https://matthey.com/en/products-and-markets/pgms-and-circularity/pgm-market-data
+silver_supply_demand,source_located_not_included,no,Annual survey data; may require manual extraction.,https://silverinstitute.org/silver-supply-demand/

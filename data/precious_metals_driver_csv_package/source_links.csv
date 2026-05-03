@@ -1,0 +1,25 @@
+﻿source,variable,url,status
+FRED / existing downloaded raw,dollar_index,https://fred.stlouisfed.org/series/DTWEXBGS,included_raw
+FRED / existing downloaded raw,yield_10y,https://fred.stlouisfed.org/series/DGS10,included_raw
+FRED / existing downloaded raw,breakeven_10y,https://fred.stlouisfed.org/series/T10YIE,included_raw
+Derived from DGS10 - T10YIE,real_rate_10y_approx,https://fred.stlouisfed.org/series/DFII10,constructed
+FRED / existing downloaded raw,vix_close,https://fred.stlouisfed.org/series/VIXCLS,included_raw
+FRED / existing downloaded raw,wti_price_usd,https://fred.stlouisfed.org/series/DCOILWTICO,included_raw
+Caldara & Iacoviello GPR official XLSX,gpr,https://www.matteoiacoviello.com/gpr.htm,included_raw_from_xlsx
+User precious metals price panel,gold_silver_ratio_*,internal price panel,constructed
+User precious metals price panel,platinum_palladium_ratio_*,internal price panel,constructed
+User precious metals price panel,gold_platinum_ratio_*,internal price panel,constructed
+ICE / Yahoo / Stooq,MOVE,https://developer.ice.com/fixed-income-data-services/catalog/ice-data-indices-move-index,source_located_not_included
+FRED BAMLC0A0CM,credit_spread_ig,https://fred.stlouisfed.org/series/BAMLC0A0CM,source_located_not_included
+FRED BAMLH0A0HYM2,credit_spread_hy,https://fred.stlouisfed.org/series/BAMLH0A0HYM2,source_located_not_included
+FRED STLFSI4,financial_stress,https://fred.stlouisfed.org/series/STLFSI4,source_located_not_included
+World Gold Council,gold_etf_holdings_flows,https://www.gold.org/goldhub/data/gold-etfs-holdings-and-flows,source_located_not_included
+World Gold Council / IMF IFS,central_bank_gold_reserves_changes,https://www.gold.org/goldhub/data/gold-reserves-by-country,source_located_not_included
+CFTC Disaggregated Futures Only,CFTC_COT_disaggregated_positions,https://publicreporting.cftc.gov/Commitments-of-Traders/Disaggregated-Futures-Only/72hh-3qpy,source_located_not_included
+CME / CFTC,COMEX_volume_open_interest,https://www.cmegroup.com/market-data/volume-open-interest.html,source_located_not_included
+FRED INDPRO / OECD,industrial_production,https://fred.stlouisfed.org/series/INDPRO,source_located_not_included
+ISM / S&P Global / Trading Economics,PMI,https://www.ismworld.org/supply-management-news-and-reports/reports/ism-pmi-reports/,source_located_not_included
+OICA,auto_production,https://oica.net/production-statistics/,source_located_not_included
+WPIC,platinum_supply_demand,https://platinuminvestment.com/supply-and-demand/historic-data,source_located_not_included
+Johnson Matthey,palladium_supply_demand,https://matthey.com/en/products-and-markets/pgms-and-circularity/pgm-market-data,source_located_not_included
+Silver Institute,silver_supply_demand,https://silverinstitute.org/silver-supply-demand/,source_located_not_included

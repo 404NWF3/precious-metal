@@ -909,6 +909,57 @@ R^{2G}=R_{xz}^{2}\left(R_{xz}^{-1}R_{yx}\right)^{2},
   \label{fig:lagged-within-silver}
 \end{figure}
 
-综合三组证据可以得到更加稳健的解释框架：第一，$R^{2G}$分解在同一总$R^{2}$约束下度量来源节点贡献，是本文多尺度风险溢出的主结果；第二，PCA正交化$R^{2}$贡献分解描述同期解释性连接，揭示共同变动中哪些节点具有更高统计解释权重；第三，Granger检验和滞后$R^{2G}$为时间方向提供补充证据，显示短期黄金期货、短期白银成分以及若干中长期现货节点具有滞后预测解释力。经济含义上，贵金属市场的风险连接既包括同期宏观冲击驱动的共同波动，也包括短期价格发现和跨尺度重新定价带来的滞后方向；因此，对贵金属风险溢出的解释应以$R^{2G}$为主线，以PCA同期结构和滞后方向检验作为相互补充的证据。
+\subsection{外部因素对动态风险连接的解释}
+
+在识别贵金属期现市场多尺度风险溢出后，本文进一步分析动态TCI的外部驱动因素。本文选取美元指数、利率与期限利差、通胀和经济增长预期、金融压力、原油价格、地缘政治风险、贵金属相对价格以及CFTC非商业持仓等变量组作为潜在驱动因素。考虑到动态TCI本身具有较强持续性，模型同时纳入TCI滞后项和外部变量滞后项。在候选模型中，带有自回归项的ElasticNet模型具有更小的预测误差，同时能够通过标准化系数衡量不同变量组的相对解释权重，因此本文采用ARX-ElasticNet模型考察外部因素对风险连接度时变路径的解释。长期同尺度TCI在252日滚动窗口下几乎接近100\%，主要反映低频共同趋势而非一般意义上的外部冲击响应，因此不作为主驱动因素分析对象，后续重点考察短期同尺度、中期同尺度以及四类同金属跨尺度TCI。
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.82\textwidth]{ltc_window_sensitivity.png}
+  \caption{长期同尺度TCI的滚动窗口敏感性}
+  \label{fig:ltc-window-sensitivity}
+\end{figure}
+
+% \begin{figure}[H]
+%   \centering
+%   \includegraphics[width=\textwidth]{elasticnet_target_prediction_diagnostics.png}
+%   \caption{ARX-ElasticNet模型对动态TCI的拟合结果}
+%   \label{fig:elasticnet-tci-fitting}
+% \end{figure}
+
+图\ref{fig:elasticnet-tci-fitting}展示了ARX-ElasticNet模型对各类TCI的拟合结果。总体来看，预测序列能够较好跟随TCI的主要变动方向，尤其能够捕捉同尺度短期、中期以及四类同金属跨尺度网络的阶段性上升和下降。表\ref{tab:elasticnet-driver-metrics}进一步给出测试集上的MAE和MSE。六类网络的MAE均低于0.60个百分点；除铂金跨尺度网络外，MSE均低于1。与随机森林模型相比，ARX-ElasticNet显著降低了拟合误差，说明在当前样本中，动态TCI的变化更适合由滞后连接度与外部变量共同构成的稀疏线性模型刻画。在模型误差较小的基础上，进一步分析标准化系数的重要性得分具有更好的统计依据。
+
+\begin{table}[H]
+\caption{ARX-ElasticNet模型测试集拟合误差}
+\label{tab:elasticnet-driver-metrics}
+\begin{normaltable}
+\begin{tabular}{lrr}
+\toprule
+TCI网络 & MAE & MSE \\
+\midrule
+短期同尺度 & 0.41 & 0.52 \\
+中期同尺度 & 0.13 & 0.03 \\
+黄金跨尺度 & 0.58 & 0.59 \\
+白银跨尺度 & 0.48 & 0.76 \\
+铂金跨尺度 & 0.52 & 1.44 \\
+钯金跨尺度 & 0.25 & 0.28 \\
+\bottomrule
+\end{tabular}
+\end{normaltable}
+\begin{flushleft}
+{\songti\zihao{5}注：MAE单位为百分点，MSE单位为平方百分点。}
+\end{flushleft}
+\end{table}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{elasticnet_driver_group_score_heatmap.png}
+  \caption{ARX-ElasticNet模型下外部因素对动态TCI的重要性}
+  \label{fig:elasticnet-driver-importance}
+\end{figure}
+
+在模型拟合效果得到验证后，本文进一步计算各变量组的重要性，以识别贵金属风险溢出的潜在驱动因素。图\ref{fig:elasticnet-driver-importance}显示，不同网络的主要驱动因素具有明显异质性。中期同尺度风险连接主要受到金融压力、通胀增长、地缘政治风险和CFTC铂金持仓影响，说明中期跨金属联动同时反映宏观风险偏好、通胀预期和交易持仓变化。短期同尺度网络中，通胀增长、金融压力、CFTC白银与铂金持仓、黄金白银相对价格和黄金铂金相对价格的重要性较高，表明短期风险连接更容易受到宏观预期、投机交易和贵金属内部相对估值的共同影响。黄金跨尺度网络中，CFTC钯金持仓、通胀增长、铂钯相对价格和金铂相对价格具有较高解释权重；白银跨尺度网络则主要受到金铂相对价格、CFTC白银持仓、利率变量和地缘政治风险影响。铂金跨尺度网络中，地缘政治风险和铂钯相对价格最为突出，钯金跨尺度网络的驱动因素则相对分散，通胀增长、金融压力、原油价格、地缘政治风险和黄金铂金相对价格均具有一定作用。总体而言，通胀增长、金融压力、地缘政治风险、贵金属相对价格和CFTC投机持仓是解释贵金属多尺度风险连接变化的主要外部因素，可作为贵金属市场系统性风险监测和预警的重要参考指标。
+
+综合四组证据可以得到更加稳健的解释框架：第一，$R^{2G}$分解在同一总$R^{2}$约束下度量来源节点贡献，是本文多尺度风险溢出的主结果；第二，PCA正交化$R^{2}$贡献分解描述同期解释性连接，揭示共同变动中哪些节点具有更高统计解释权重；第三，Granger检验和滞后$R^{2G}$为时间方向提供补充证据，显示短期黄金期货、短期白银成分以及若干中长期现货节点具有滞后预测解释力；第四，ARX-ElasticNet模型进一步表明，通胀增长、金融压力、地缘政治风险、贵金属相对价格和CFTC投机持仓会影响不同网络TCI的动态变化。经济含义上，贵金属市场的风险连接既包括同期宏观冲击驱动的共同波动，也包括短期价格发现和跨尺度重新定价带来的滞后方向；外部驱动因素则为识别风险连接增强阶段提供了重要信息。因此，对贵金属风险溢出的解释应以$R^{2G}$为主线，以PCA同期结构、滞后方向检验和外部因素解释作为相互补充的证据。
 
 \end{document}
